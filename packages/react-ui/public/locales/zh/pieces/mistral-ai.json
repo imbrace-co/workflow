@@ -1,0 +1,20 @@
+{
+  "Mistral AI provides state-of-the-art open-weight and hosted language models for text generation, embeddings, and reasoning tasks": "Mistral AI provides state-of-the-art open-weight and hosted language models for text generation, embeddings, and reasoning tasks.",
+  "You can obtain your API key from the Mistral AI dashboard. Go to https://console.mistral.ai, generate an API key, and paste it here": "You can obtain your API key from the Mistral AI dashboard. Go to https://console.mistral.ai, generate an API key, and paste it here.",
+  "Ask Mistral": "Ask Mistral",
+  "Create Embeddings": "Create Embeddings",
+  "List Models": "List Models",
+  "Ask Mistral anything you want!": "Ask Mistral anything you want!",
+  "Creates new embedding in Mistral AI": "Creates new embedding in Mistral AI.",
+  "Upload a file to Mistral AI (e.g., for fine-tuning or context storage)": "Upload a file to Mistral AI (e.g., for fine-tuning or context storage).",
+  "Retrieves a list of available Mistral AI models": "Retrieves a list of available Mistral AI models.",
+  "Random Seed": "Random Seed",
+  "Purpose": "Purpose",
+  "Select a Mistral model. List is fetched live from your account": "Select a Mistral model. List is fetched live from your account.",
+  "The input text for which to create an embedding": "The input text for which to create an embedding.",
+  "The file to upload (max 512MB).For fine tuning purspose provide .jsonl file": "The file to upload (max 512MB).For fine tuning purspose provide .jsonl file.",
+  "Purpose of the file": "Purpose of the file.",
+  "fine-tune": "fine-tune",
+  "batch": "batch",
+  "ocr": "ocr"
+}

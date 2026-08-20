@@ -1,0 +1,22 @@
+{
+  "Account Email": "帳戶 電子郵件",
+  "API token": "API token",
+  "Confluence Domain": "Confluence Domain",
+  "Account email for basic auth": "Account email for basic auth",
+  "API token for basic auth": "API token for basic auth",
+  "Example value - https://your-domain.atlassian.net": "Example value - https://your-domain.atlassian.net",
+  "Please refer to this guide to get your api credentials: https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account": "Please refer to this guide to get your api credentials: https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account",
+  "Get Page Content": "取得頁面內容",
+  "Create Page from Template": "從範本建立頁面",
+  "Get page content and optionally all its descendants": "取得頁面內容，並可選擇包含所有子頁面",
+  "Page ID": "Page ID",
+  "Include Descendants ?": "Include Descendants ?",
+  "Dynamic Properties": "Dynamic Properties",
+  "Parent Folder": "父文件夹",
+  "Template Variables": "Template Variables",
+  "Get this from the page URL of your Confluence Cloud": "Get this from the page URL of your Confluence Cloud",
+  "If checked, will fetch all child pages recursively": "If checked, will fetch all child pages recursively.",
+  "Published ": "已发布 ",
+  "New Page": "New Page",
+  "Triggers when a new page is created": "Triggers when a new page is created."
+}

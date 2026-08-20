@@ -1,0 +1,16 @@
+{
+  "Automate image generation": "Automate image generation",
+  "Bannerbear API Key": "Bannerbear API Key",
+  "Create image from Bannerbear template": "Create image from Bannerbear template",
+  "Template": "模板",
+  "Template version": "Template version",
+  "Template modifications": "Template modifications",
+  "Transparent background": "Transparent background",
+  "Render a PDF": "Render a PDF",
+  "The template to use in image creation": "The template to use in image creation.",
+  "Create image based on a specific version of the template": "Create image based on a specific version of the template.",
+  "A list of modifications you want to make on the template": "A list of modifications you want to make on the template.",
+  "Render a PNG with a transparent background. Default is false": "Render a PNG with a transparent background. Default is false.",
+  "Render a PDF instead of a PNG. Default is false": "Render a PDF instead of a PNG. Default is false.",
+  "Any metadata that you need to store e.g. ID of a record in your DB": "Any metadata that you need to store e.g. ID of a record in your DB."
+}

@@ -1,0 +1,17 @@
+{
+  "Open-source time tracking software": "Open-source time tracking software",
+  "API Password": "API Password",
+  "Kimai Instance URL (e.g. https://demo.kimai.org)": "Kimai Instance URL (e.g. https://demo.kimai.org)",
+  "Kimai Username/Email": "Kimai Username/Email",
+  "Kimai API Password": "Kimai API Password",
+  "\n  To configure API access:\n\n  1. Go to Kimai Web UI;\n  2. Click on your user profile and then go to \"API Access\";\n  3. Configure an API password (different from user password).\n  ": "\n  To configure API access:\n\n  1. Go to Kimai Web UI;\n  2. Click on your user profile and then go to \"API Access\";\n  3. Configure an API password (different from user password).\n  。",
+  "Create Timesheet": "Create Timesheet",
+  "Create a new timesheet": "Create a new timesheet",
+  "Activity": "Activity",
+  "Begin Date": "Begin Date",
+  "Kimai project": "Kimai project",
+  "Kimai activity": "Kimai activity",
+  "Begin Date of Timesheet": "Begin Date of Timesheet",
+  "End Date of Timesheet": "End Date of Timesheet",
+  "Description of Timesheet": "Description of Timesheet"
+}

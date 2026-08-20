@@ -1,0 +1,13 @@
+{
+  "Collaborative work management platform combining databases with spreadsheets": "Collaborative work management platform combining databases with spreadsheets.",
+  "\n  You can obtain API key by navigate to **My Profile->API Key** from top-right corner.\n  \n  You can obtain Account ID from browser URL.For example, if smartsuite workspace URL is https://app.smartsuite.com/xyz/home, your Account ID is **xyz**": "\n  You can obtain API key by navigate to **My Profile->API Key** from top-right corner.\n  \n  You can obtain Account ID from browser URL.For example, if smartsuite workspace URL is https://app.smartsuite.com/xyz/home, your Account ID is **xyz**.",
+  "Creates a new record in the specified table": "Creates a new record in the specified table.",
+  "Updates an existing record in the specified table": "Updates an existing record in the specified table",
+  "Deletes a record from the specified table": "Deletes a record from the specified table",
+  "Uploads a file and attaches it to a record": "Uploads a file and attaches it to a record.",
+  "Searches for records in the specified table based on criteria": "Searches for records in the specified table based on criteria.",
+  "Retrieves a specific record by ID": "Retrieves a specific record by ID",
+  "Solution": "Solution",
+  "Triggers when a new record is created in the specified table": "Triggers when a new record is created in the specified table",
+  "Triggers when a record is updated in the specified table": "Triggers when a record is updated in the specified table."
+}

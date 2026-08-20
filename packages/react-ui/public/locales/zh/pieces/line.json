@@ -1,0 +1,8 @@
+{
+  "Build chatbots for LINE": "Build chatbots for LINE",
+  "Push Message": "推送訊息",
+  "Push message to the line account": "推送訊息到 LINE 帳號",
+  "The user id can be obtained from the webhook payload": "The user id can be obtained from the webhook payload",
+  "Triggers when a new message is received": "Triggers when a new message is received",
+  "\n- Create Line bot account from Developer Console\n- Go to the \"Messaging API\" section.\n- In the webhook settings, paste this URL: \n  `{{webhookUrl}}`\n- Publish Activepieces flow first then click \"Verify\" button\n": "\n- Create Line bot account from Developer Console\n- Go to the \"Messaging API\" section.\n- In the webhook settings, paste this URL: \n  `{{webhookUrl}}`\n- Publish Activepieces flow first then click \"Verify\" button\n"
+}

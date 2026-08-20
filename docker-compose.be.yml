@@ -1,0 +1,21 @@
+version: '3.8'
+
+# Backend Service - Standalone
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    container_name: ap-backend
+    restart: unless-stopped
+    ports:
+      - '3000:3000'
+    env_file:
+      - .env.backend.dev
+    networks:
+      - activepieces
+
+networks:
+  activepieces:
+    external: true
+    name: activepieces

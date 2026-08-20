@@ -1,0 +1,10 @@
+{
+  "Your Knack API Key available in the Settings section of the Builder": "Your Knack API Key available in the Settings section of the Builder.",
+  "Your Application ID available in the Settings section of the Builder": "Your Application ID available in the Settings section of the Builder.",
+  "Creates a new record into a specified object/table": "Creates a new record into a specified object/table.",
+  "Deletes an existing record from a table": "Deletes an existing record from a table.",
+  "Finds a single record using field value": "Finds a single record using field value.",
+  "Record Fields": "Record Fields",
+  "Field to find the record by": "Field to find the record by",
+  "The value to search for in the specified field": "The value to search for in the specified field."
+}

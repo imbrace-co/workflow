@@ -1,0 +1,11 @@
+{
+  "Workspace URL": "Workspace URL",
+  "Bot Token": "Bot Token",
+  "The workspace URL of the Mattermost instance (e.g https://activepieces.mattermost.com)": "The workspace URL of the Mattermost instance (e.g https://activepieces.mattermost.com)",
+  "The bot token to use to authenticate": "The bot token to use to authenticate",
+  "\n**Workspace URL**: The url of mattermost instance (e.g `https://activepieces.mattermost.com`)\n\n**Bot Token**: Obtain it from settings > integrations > bot accounts > add bot account\n": "\n**Workspace URL**: The url of mattermost instance (e.g `https://activepieces.mattermost.com`)\n\n**Bot Token**: Obtain it from settings > integrations > bot accounts > add bot account\n",
+  "Send a message to a Mattermost channel": "Send a message to a Mattermost channel",
+  "Message Text": "Message Text",
+  "The channel to send the message to, get that ID by clicking on info near start call butto": "The channel to send the message to, get that ID by clicking on info near start call butto",
+  "The text of the message to send": "The text of the message to send"
+}

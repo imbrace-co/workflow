@@ -1,0 +1,22 @@
+{
+  "Netlify is a platform for building and deploying websites and apps": "Netlify is a platform for building and deploying websites and apps.",
+  "\nTo authenticate with Netlify:\n\n1. Go to your Netlify user settings\n2. Navigate to \"Applications\" → \"OAuth applications\"\n3. Click \"New OAuth application\"\n4. Add https://cloud.activepieces.com/redirect to authorized redirect URIs\n5. Copy the Client ID and Client Secret\n6. Use the OAuth2 flow below\n\n**Note:** If your team uses SAML SSO, you must grant access to the team when generating your token.\n": "\nTo authenticate with Netlify:\n\n1. Go to your Netlify user settings\n2. Navigate to \"Applications\" → \"OAuth applications\"\n3. Click \"New OAuth application\"\n4. Add https://cloud.activepieces.com/redirect to authorized redirect URIs\n5. Copy the Client ID and Client Secret\n6. Use the OAuth2 flow below\n\n**Note:** If your team uses SAML SSO, you must grant access to the team when generating your token.\n",
+  "Clear Build Cache": "Clear Build Cache",
+  "Select the site to deploy": "Select the site to deploy",
+  "Whether to clear the build cache before building": "Whether to clear the build cache before building",
+  "Select the site to retrieve information for": "Select the site to retrieve information for",
+  "Select the site to list deploys for": "Select the site to list deploys for",
+  "Number of items per page (max 100)": "Number of items per page (max 100)",
+  "Select the site to list files for": "Select the site to list files for",
+  "New Deploy Started": "New Deploy Started",
+  "New Deploy Succeeded": "New Deploy Succeeded",
+  "New Deploy Failed": "New Deploy Failed",
+  "Fires immediately when a deploy job starts on your Netlify site": "Fires immediately when a deploy job starts on your Netlify site.",
+  "Fires when a new site version has successfully deployed": "Fires when a new site version has successfully deployed.",
+  "Fires when a site deploy fails": "Fires when a site deploy fails.",
+  "Fires when a Netlify form submission is received": "Fires when a Netlify form submission is received.",
+  "Select the site to monitor for deploy events": "Select the site to monitor for deploy events",
+  "Select the site to monitor for successful deploy events": "Select the site to monitor for successful deploy events",
+  "Select the site to monitor for failed deploy events": "Select the site to monitor for failed deploy events",
+  "Select the site to monitor for form submissions": "Select the site to monitor for form submissions"
+}

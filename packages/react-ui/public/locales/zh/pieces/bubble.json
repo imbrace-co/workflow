@@ -1,0 +1,16 @@
+{
+  "No-code platform for web and mobile apps": "No-code platform for web and mobile apps",
+  "Typename": "Typename",
+  "Thing ID": "Thing ID",
+  "Constraint": "Constraint",
+  "Field": "字段",
+  "Value": "值",
+  "Start from": "Start from",
+  "equals or not equal": "equals or not equal",
+  "text contains or not text contains": "text contains or not text contains",
+  "greater than or less than": "greater than or less than",
+  "in or not in": "in or not in",
+  "contains or not contains": "contains or not contains",
+  "empty or not empty": "empty or not empty",
+  "geographic_search": "geographic_search"
+}

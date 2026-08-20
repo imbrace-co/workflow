@@ -1,0 +1,11 @@
+{
+  "AI Voice Generator & Text to Speech": "AI Voice Generator & Text to Speech",
+  "Use according URL in Custom API Call pieces": "Use according URL in Custom API Call pieces",
+  "default - https://api.elevenlabs.io": "default - https://api.elevenlabs.io",
+  "US - https://api.us.elevenlabs.io": "US - https://api.us.elevenlabs.io",
+  "EU - https://api.eu.residency.elevenlabs.io": "EU - https://api.eu.residency.elevenlabs.io",
+  "\nFollow these instructions to get your API Key:\n1. Visit your Elevenlabs dashboard.\n2. Once there, click on your account in the bottom left corner.\n3. Press Profile + API Key.\n4. Copy the API Key.\n": "\nFollow these instructions to get your API Key:\n1. Visit your Elevenlabs dashboard.\n2. Once there, click on your account in the bottom left corner.\n3. Press Profile + API Key.\n4. Copy the API Key.\n",
+  "Convert text to speech using Elevenlabs": "Convert text to speech using Elevenlabs",
+  "\nCheck [Elevenlabs API reference](https://elevenlabs.io/docs/api-reference/introduction)\nfor the list of available endpoints.\n": "\nCheck [Elevenlabs API reference](https://elevenlabs.io/docs/api-reference/introduction)\nfor the list of available endpoints.\n",
+  "Select the voice for the text to speech": "Select the voice for the text to speech"
+}

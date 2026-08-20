@@ -1,0 +1,12 @@
+{
+  "LLM Rails Platform": "LLM Rails Platform",
+  "\nFollow these instructions to get your LLMRails API Key:\n\n1. Visit the following website: https://console.llmrails.com/api-keys.\n2. Once on the website, click on create a key.\n3. Once you have created a key, copy it and use it for the Api key field on the site.\n": "\nFollow these instructions to get your LLMRails API Key:\n\n1. Visit the following website: https://console.llmrails.com/api-keys.\n2. Once on the website, click on create a key.\n3. Once you have created a key, copy it and use it for the Api key field on the site.\n",
+  "Datastore search": "Datastore search",
+  "Search in datastore": "Search in datastore",
+  "Datastore ID": "Datastore ID",
+  "Hybrid search": "Hybrid search",
+  "Summarize": "Summarize",
+  "Search query": "Search query",
+  "Hybrid search is combining dense and sparse embeddings": "Hybrid search is combining dense and sparse embeddings.",
+  "Summarizes the datastore search results": "Summarizes the datastore search results"
+}

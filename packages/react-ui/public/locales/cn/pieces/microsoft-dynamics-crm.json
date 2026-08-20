@@ -1,0 +1,12 @@
+{
+  "Customer relationship management software package developed by Microsoft": "Customer relationship management software package developed by Microsoft.",
+  "Host URL (without trailing slash)": "Host URL (without trailing slash)",
+  "Tenant ID": "Tenant ID",
+  "Proxy URL with Port": "Proxy URL with Port",
+  "Host URL without trailing slash.For example **https://demo.crm.dynamics.com**": "Host URL without trailing slash.For example **https://demo.crm.dynamics.com**",
+  "Keep empty if not needed. Optional proxy URL used for establishing connections when proxying requests is needed. For example: **https://proxy.com:8080**": "Keep empty if not needed. Optional proxy URL used for establishing connections when proxying requests is needed. For example: **https://proxy.com:8080**.",
+  "Select or map the entity for which you want to create the record": "Select or map the entity for which you want to create the record.",
+  "Select or map the entity name whose records you want to delete": "Select or map the entity name whose records you want to delete.",
+  "Select or map the entity name whose records you want to retrieve": "Select or map the entity name whose records you want to retrieve.",
+  "Select or map the entity for which you want to update the record": "Select or map the entity for which you want to update the record."
+}

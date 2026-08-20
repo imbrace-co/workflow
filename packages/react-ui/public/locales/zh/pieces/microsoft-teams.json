@@ -1,0 +1,18 @@
+{
+  "Message Content Type": "Message Content Type",
+  "Initial Message": "Initial Message",
+  "Reply ID (optional)": "Reply ID (optional)",
+  "Search By": "Search By",
+  "searchValue": "searchValue",
+  "ID of the parent message to reply to": "ID of the parent message to reply to.",
+  "The ID of the message to retrieve": "The ID of the message to retrieve.",
+  "The ID of the channel message to retrieve": "The ID of the channel message to retrieve.",
+  "Provide to fetch a specific reply under the message": "Provide to fetch a specific reply under the message.",
+  "Email address or name to search for": "Email address or name to search for.",
+  "New Channel Message": "New Channel Message",
+  "New Channel": "New Channel",
+  "Triggers when a new message is posted in a channel": "Triggers when a new message is posted in a channel.",
+  "Triggers when a new channel is created in a team": "Triggers when a new channel is created in a team.",
+  "Triggers when a new chat is created": "Triggers when a new chat is created.",
+  "Triggers when a new message is received in a chat": "Triggers when a new message is received in a chat."
+}

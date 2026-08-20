@@ -1,0 +1,18 @@
+{
+  "Turn your spreadsheets into smart database apps": "Turn your spreadsheets into smart database apps",
+  "\nTo obtain your API key, follow these steps:\n\n1. Go to Account Overview by clicking your profile-pic (top-right).\n2. Go to API section and enable API key.\n3. Copy API key": "\nTo obtain your API key, follow these steps:\n\n1. Go to Account Overview by clicking your profile-pic (top-right).\n2. Go to API section and enable API key.\n3. Copy API key.",
+  "Create Retable Record": "Create Retable Record",
+  "Get Workspaces": "Get Workspaces",
+  "Get Retables": "Get Retables",
+  "Create a Workspace": "Create a Workspace",
+  "Adds a record into a retable": "Adds a record into a retable",
+  "Gets all workspaces": "Gets all workspaces",
+  "Gets all projects in given workspace": "Gets all projects in given workspace",
+  "Gets all retables in given project": "Gets all retables in given project",
+  "Creates a workspace": "Creates a workspace",
+  "Creates a project in the given workspace": "Creates a project in the given workspace",
+  "Retable": "Retable",
+  "Workspace Name": "Workspace Name",
+  "Workspace Description": "Workspace Description",
+  "Project Color": "Project Color"
+}

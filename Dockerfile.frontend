@@ -1,0 +1,110 @@
+# Multi-stage build for frontend service
+FROM node:20.19-bullseye-slim AS base
+
+# Install system dependencies needed for the build process
+RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
+    --mount=type=cache,target=/var/lib/apt,sharing=locked \
+    apt-get update && \
+    apt-get install -y --no-install-recommends \
+        python3 \
+        g++ \
+        build-essential \
+        git \
+        procps \
+        ca-certificates \
+        curl \
+        unzip && \
+    update-ca-certificates && \
+    yarn config set python /usr/bin/python3 && \
+    npm install -g node-gyp
+
+# Install bun and verify installation in one layer
+RUN curl -fsSL https://bun.sh/install | bash -s "bun-v1.3.1" && \
+    /root/.bun/bin/bun --version
+
+ENV BUN_INSTALL="/root/.bun"
+ENV PATH="${BUN_INSTALL}/bin:${PATH}"
+
+# Set environment variables
+ENV LANG=en_US.UTF-8
+ENV LANGUAGE=en_US:en
+ENV LC_ALL=en_US.UTF-8
+ENV NX_DAEMON=false
+
+### STAGE 1: Dependencies ###
+FROM base AS dependencies
+
+WORKDIR /usr/src/app
+
+# Copy package files
+COPY .npmrc package.json bun.lock ./
+
+# Install global npm packages in a single layer
+RUN --mount=type=cache,target=/root/.npm \
+    npm install -g --no-fund --no-audit \
+    node-gyp \
+    npm@9.9.3 \
+    pm2@6.0.10 \
+    typescript@4.9.4
+
+# Install isolated-vm globally (needed for sandboxes)
+RUN --mount=type=cache,target=/root/.bun/install/cache \
+    cd /usr/src && bun install isolated-vm@5.0.1
+
+# Install dependencies using the full bun path (without frozen lockfile since we added packages)
+RUN ${BUN_INSTALL}/bin/bun install
+### STAGE 2: Build ###
+FROM dependencies AS build
+
+# Copy source code
+COPY . .
+
+# NOTE: The build is intentionally config-free.
+# - vite only inlines VITE_* vars; the AP_* values are NOT read at build time.
+# - The build writes literal "${AP_APP_TITLE}" / "${AP_FAVICON_URL}" placeholders into
+#   index.html (see packages/react-ui/vite.config.ts), filled at runtime by the entrypoint.
+# - All other env-specific config is loaded at runtime from /app/.env (see /config endpoint).
+# This is what makes one image work in every environment.
+
+# Build frontend for production
+RUN npx nx run-many --target=build --projects=react-ui
+
+### STAGE 3: Production ###
+FROM nginx:alpine AS production
+
+# Install gettext for envsubst command
+RUN apk add --no-cache gettext
+
+# Copy the single nginx template (rendered at container start by the entrypoint via envsubst)
+COPY .nginx/nginx.frontend.template.conf /etc/nginx/nginx.template.conf
+
+# Copy built frontend files
+COPY --from=build /usr/src/app/dist/packages/react-ui /usr/share/nginx/html/
+
+# Copy and make entrypoint executable
+COPY generate-env-json.sh /
+RUN chmod +x /generate-env-json.sh && \
+    sed -i 's/\r$//' /generate-env-json.sh
+
+# Create directory for .env file mount point
+RUN mkdir -p /app
+
+# No env values are baked into the image. Everything is read at runtime from /app/.env,
+# with last-resort fallbacks defined in the entrypoint (generate-env-json.sh):
+#   - env-specific (GATEWAY_URL, AP_GATEWAY_URL, AP_CHAT_WIDGET, AP_ENVIRONMENT, AP_FRONTEND_URL)
+#   - REQUIRED, fail-loud if missing (BACKEND_UPSTREAM, WEBAPP_ORIGIN)
+#   - constants (AP_APP_TITLE, AP_FAVICON_URL, AP_IMBRACE_ADDING_CONNECTION_PIECES)
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
+    CMD wget --no-verbose --tries=1 --spider http://localhost:80/health || exit 1
+
+# Labels
+LABEL service=activepieces-frontend
+LABEL component=frontend
+
+# Expose port
+EXPOSE 4200
+
+# Use custom entrypoint
+ENTRYPOINT ["/generate-env-json.sh"]

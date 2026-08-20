@@ -1,0 +1,14 @@
+{
+  "Review Management Tool": "Review Management Tool",
+  "Please enter the API Key obtained from Cloutly": "Please enter the API Key obtained from Cloutly.",
+  "Send Review Invite": "Send Review Invite",
+  "Sends a review invite to your customer": "Sends a review invite to your customer.",
+  "Source Customer ID": "Source Customer ID",
+  "Business ID": "Business ID",
+  "Invite Delay Days": "Invite Delay Days",
+  "Sales Rep Email": "Sales Rep Email",
+  "The email of the customer to send the invite to (required if Phone Number is empty)": "The email of the customer to send the invite to (required if Phone Number is empty)",
+  "The phone number of the customer to send the invite to (required if Email is empty)": "The phone number of the customer to send the invite to (required if Email is empty)",
+  "The number of days to delay the invite (i.e send after X days)": "The number of days to delay the invite (i.e send after X days)",
+  "The email of the sales rep to associate the review and customer": "The email of the sales rep to associate the review and customer"
+}

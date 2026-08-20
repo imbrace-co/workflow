@@ -1,0 +1,20 @@
+{
+  "Communications for what you're building": "Communications for what you're building",
+  "Authenticate with the Contiguity API using a revocable key. Create one at console.contiguity.com/dashboard/tokens": "Authenticate with the Contiguity API using a revocable key. Create one at console.contiguity.com/dashboard/tokens",
+  "Send SMS/MMS": "Send SMS/MMS",
+  "Send iMessage": "Send iMessage",
+  "Send a text message": "Send a text message",
+  "Send an iMessage": "Send an iMessage",
+  "Attachments": "Attachments",
+  "SMS/RCS Fallback": "SMS/RCS Fallback",
+  "When to fallback": "When to fallback",
+  "Recipient phone number in E.164 format": "Recipient phone number in E.164 format",
+  "Your leased phone number": "Your leased phone number",
+  "Text message content": "Text message content",
+  "File URLs (max 3, 5MB total, HTTPS required)": "File URLs (max 3, 5MB total, HTTPS required)",
+  "Your leased iMessage number": "Your leased iMessage number.",
+  "iMessage content": "iMessage content",
+  "Fallback to SMS/RCS when iMessage fails or unsupported": "Fallback to SMS/RCS when iMessage fails or unsupported",
+  "Conditions that trigger SMS/RCS fallback": "Conditions that trigger SMS/RCS fallback",
+  "File URLs (max 10, 50MB total, HTTPS required)": "File URLs (max 10, 50MB total, HTTPS required)"
+}

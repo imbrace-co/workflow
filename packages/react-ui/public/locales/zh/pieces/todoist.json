@@ -1,0 +1,16 @@
+{
+  "To-do list and task manager": "To-do list and task manager",
+  "Mark Task as Completed": "Mark Task as Completed",
+  "Create task": "Create task",
+  "Finds a task by name": "Finds a task by name.",
+  "Marks a task as being completed": "Marks a task as being completed.",
+  "Task project ID. If not set, task is put to user's Inbox": "Task project ID. If not set, task is put to user's Inbox.",
+  "The task's content. It may contain some markdown-formatted text and hyperlinks": "The task's content. It may contain some markdown-formatted text and hyperlinks",
+  "A description for the task. This value may contain some markdown-formatted text and hyperlinks": "A description for the task. This value may contain some markdown-formatted text and hyperlinks.",
+  "The task's labels (a list of names that may represent either personal or shared labels)": "The task's labels (a list of names that may represent either personal or shared labels)",
+  "Task priority from 1 (normal) to 4 (urgent)": "Task priority from 1 (normal) to 4 (urgent)",
+  "The name of the task to search for": "The name of the task to search for.",
+  "Search for tasks within the selected project. If left blank, then all projects are searched": "Search for tasks within the selected project. If left blank, then all projects are searched.",
+  "Triggers when a new task is completed": "Triggers when a new task is completed",
+  "Leave it blank if you want to get completed tasks from all your projects": "Leave it blank if you want to get completed tasks from all your projects."
+}

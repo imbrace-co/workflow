@@ -1,0 +1,18 @@
+{
+  "Makes a GraphQL request.": "Makes a GraphQL request.",
+  "Send Request": "Send Request",
+  "URL": "URL",
+  "Headers": "Headers",
+  "Query params": "Query params",
+  "Query": "Query",
+  "Variables": "Variables",
+  "Use Proxy": "Use Proxy",
+  "Use a proxy for this request": "Use a proxy for this request",
+  "Proxy Settings": "Proxy Settings",
+  "Proxy Host": "Proxy Host",
+  "Proxy Port": "Proxy Port",
+  "Proxy Username": "Proxy Username",
+  "Proxy Password": "Proxy Password",
+  "Timeout(in seconds)": "Timeout(in seconds)",
+  "No Error on Failure": "No Error on Failure"
+}

@@ -1,0 +1,15 @@
+{
+  "Assign Team and End Flow": "Assign Team and End Flow",
+  "Call for service and end the flow": "Call for service and end the flow",
+  "End Message": "End Message",
+  "The message you want to say before conversation ended": "The message you want to say before conversation ended",
+  "Assign Team": "Assign Team",
+  "Team Selection": "Team Selection",
+  "Representative Selection": "Representative Selection",
+  "Team": "Team",
+  "Select a team": "Select a team",
+  "Representative": "Representative",
+  "Select a representative": "Select a representative",
+  "Error loading teams": "Error loading teams",
+  "Error loading users": "Error loading users"
+}

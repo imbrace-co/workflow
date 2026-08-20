@@ -1,0 +1,13 @@
+{
+  "The token of the Bika account": "The token of the Bika account",
+  "\n    To obtain your Bika token, follow these steps:\n\n    1. Log in to your Bika account.\n    2. Visit https://bika.com.\n    3. Click on your profile picture (Bottom left).\n    4. Click on \"My Settings\".\n    5. Click on \"Developer\".\n    6. Click on \"Generate new token\".\n    7. Copy the token.\n    ": "\n    To obtain your Bika token, follow these steps:\n\n    1. Log in to your Bika account.\n    2. Visit https://bika.com.\n    3. Click on your profile picture (Bottom left).\n    4. Click on \"My Settings\".\n    5. Click on \"Developer\".\n    6. Click on \"Generate new token\".\n    7. Copy the token.\n    ",
+  "Delete Record": "Delete Record",
+  "Creates a new record in database": "Creates a new record in database.",
+  "Finds records in database": "Finds records in database.",
+  "Retrieves a record in database by ID": "Retrieves a record in database by ID.",
+  "Updates an existing record in database": "Updates an existing record in database.",
+  "Deletes a record in database by ID": "Deletes a record in database by ID.",
+  "Database": "Database",
+  "The filter to apply to the records (see https://bika.ai/help/guide/developer/filter-query-language)": "The filter to apply to the records (see https://bika.ai/help/guide/developer/filter-query-language).",
+  "The ID of the record to delete": "The ID of the record to delete."
+}

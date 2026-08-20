@@ -1,0 +1,25 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# Ensure NVM and Node.js are available
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Check if the commit includes changes to the backend's .env file
+if git diff --cached --name-only -- packages/server/api/.env | grep -q '^packages/server/api/.env$'; then
+  echo "Error: You're attempting to commit the backend's .env file. Please avoid committing this file."
+  exit 1
+fi
+
+# Load Node.js path from common locations for macOS/Linux
+export PATH="/usr/local/bin:/opt/homebrew/bin:$HOME/.nvm/versions/node/$(nvm version 2>/dev/null)/bin:$PATH"
+
+# Use local commitlint if available, otherwise use npx
+if [ -f "./node_modules/.bin/commitlint" ]; then
+  ./node_modules/.bin/commitlint --edit ${1}
+elif command -v npx >/dev/null 2>&1; then
+  npx --yes --package=@commitlint/cli --package=@commitlint/config-conventional -- commitlint --edit ${1}
+else
+  echo "Warning: commitlint not found, skipping commit message validation"
+fi

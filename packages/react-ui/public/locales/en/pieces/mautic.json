@@ -1,0 +1,23 @@
+{
+  "Open-source marketing automation software": "Open-source marketing automation software",
+  "\nFollow these steps:\n\n1. **Enter the Base URL:** Open your Mautic instance and copy the URL from the address bar. If your dashboard link is \"https://mautic.ddev.site/s/dashboard\", set your base URL as \"https://mautic.ddev.site/\".\n\n2. **Enable Basic Authentication:** Log in to Mautic, go to **Settings** > **Configuration** > **API Settings**, and ensure that Basic Authentication is enabled.\n\n": "\nFollow these steps:\n\n1. **Enter the Base URL:** Open your Mautic instance and copy the URL from the address bar. If your dashboard link is \"https://mautic.ddev.site/s/dashboard\", set your base URL as \"https://mautic.ddev.site/\".\n\n2. **Enable Basic Authentication:** Log in to Mautic, go to **Settings** > **Configuration** > **API Settings**, and ensure that Basic Authentication is enabled.\n\n",
+  "Search Contact": "Search Contact",
+  "Update Contact With Contact Id": "Update Contact With Contact Id",
+  "Search Company": "Search Company",
+  "Update Company With Contact Id": "Update Company With Contact Id",
+  "Creates a new contact in Mautic CRM": "Creates a new contact in Mautic CRM",
+  "Search for a contact in Mautic CRM": "Search for a contact in Mautic CRM",
+  "Update a contact in Mautic CRM": "Update a contact in Mautic CRM",
+  "Creates a new company in Mautic CRM": "Creates a new company in Mautic CRM",
+  "Search for a company in Mautic CRM": "Search for a company in Mautic CRM",
+  "Update a company in Mautic CRM": "Update a company in Mautic CRM",
+  "All Fields": "All Fields",
+  "Id of the entity": "Id of the entity",
+  "List of all possible fields present": "List of all possible fields present",
+  "Contact Company Subscription Change": "Contact Company Subscription Change",
+  "Contact Channel Subscription Change": "Contact Channel Subscription Change",
+  "Triggers when a commpany is added or removed to/from contact": "Triggers when a commpany is added or removed to/from contact.",
+  "Triggers when a contact's channel subscription status changes": "Triggers when a contact's channel subscription status changes.",
+  "The name the webhook will be searchable by in mautic the webhooks page": "The name the webhook will be searchable by in mautic the webhooks page.",
+  "A short description of the webhook": "A short description of the webhook"
+}

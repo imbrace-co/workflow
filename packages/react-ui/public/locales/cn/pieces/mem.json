@@ -1,0 +1,15 @@
+{
+  "Capture and organize your thoughts using Mem.ai": "Capture and organize your thoughts using Mem.ai",
+  "You can obtain your API key by navigating to **Integrations→ API**": "You can obtain your API key by navigating to **Integrations→ API**.",
+  "Create Note": "创建备注",
+  "Delete Note": "删除备注",
+  "Input": "Input",
+  "Instructions": "Instructions",
+  "Add to Collections": "Add to Collections",
+  "Raw content you want to remember - HTML, emails, transcripts, or simple notes": "Raw content you want to remember - HTML, emails, transcripts, or simple notes.",
+  "Optional guidance on how you want this content processed or remembered": "Optional guidance on how you want this content processed or remembered.",
+  "Additional background information to relate this to your existing knowledge": "Additional background information to relate this to your existing knowledge.",
+  "Markdown-formatted content. First line is treated as the note title": "Markdown-formatted content. First line is treated as the note title.",
+  "Optional UUID to assign to the note": "Optional UUID to assign to the note.",
+  "Collection titles or IDs to assign this note to. New collections will be created if they don’t exist": "Collection titles or IDs to assign this note to. New collections will be created if they don’t exist."
+}

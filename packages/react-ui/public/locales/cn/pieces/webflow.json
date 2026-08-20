@@ -1,0 +1,17 @@
+{
+  "Design, build, and launch responsive websites visually": "Design, build, and launch responsive websites visually",
+  "Site": "Site",
+  "Collection Fields": "Collection Fields",
+  "Is Archived": "Is Archived",
+  "Is Draft": "Is Draft",
+  "Collection Item": "Collection Item",
+  "Send Order Fulfilled Email": "Send Order Fulfilled Email",
+  "Whether the item is archived or not": "Whether the item is archived or not",
+  "Whether the item is a draft or not": "Whether the item is a draft or not",
+  "The name of the field to search by": "The name of the field to search by",
+  "The value of the field to search for": "The value of the field to search for",
+  "The maximum number of results to return": "The maximum number of results to return",
+  "Send an email to the customer that their order has been fulfilled": "Send an email to the customer that their order has been fulfilled",
+  "Triggers when Webflow Site receives a new submission": "Triggers when Webflow Site receives a new submission",
+  "Copy from the form settings, or from one of the responses": "Copy from the form settings, or from one of the responses"
+}

@@ -1,0 +1,30 @@
+{
+  "name": "pieces-builtin",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/pieces/builtin/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/pieces/builtin",
+        "tsConfig": "packages/pieces/builtin/tsconfig.lib.json",
+        "main": "packages/pieces/builtin/src/index.ts",
+        "clean": false
+      }
+    },
+    "watch": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx tsc -w -p packages/pieces/builtin/tsconfig.lib.json"
+      }
+    },
+    "generate-metadata": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "node scripts/generate-builtin-metadata.mjs"
+      }
+    }
+  }
+}

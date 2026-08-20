@@ -1,0 +1,18 @@
+{
+  "Social media platform with over 500 million user": "Social media platform with over 500 million user",
+  "Api Key": "Api Key",
+  "Api Key Secret": "Api Key Secret",
+  "Access Token Secret": "Access Token Secret",
+  "The api key": "The api key",
+  "The api key secret": "The api key secret",
+  "The access token": "The access token",
+  "The access token secret": "The access token secret",
+  "\nIf you don't have the credentials down below, please follow these steps to obtain the required credentials:\n\n1. Go to [https://developer.twitter.com/en/portal/projects-and-apps](https://developer.twitter.com/en/portal/projects-and-apps) and click on your app settings.\n\n2. Under the **Settings** tab then under **User authentication settings** section, click \"Set up\".\n\n3. **This step must be completed before generating the keys**, check on **Read and write** for \"App permissions\" and **Native App** for \"Type": "\nIf you don't have the credentials down below, please follow these steps to obtain the required credentials:\n\n1. Go to [https://developer.twitter.com/en/portal/projects-and-apps](https://developer.twitter.com/en/portal/projects-and-apps) and click on your app settings.\n\n2. Under the **Settings** tab then under **User authentication settings** section, click \"Set up\".\n\n3. **This step must be completed before generating the keys**, check on **Read and write** for \"App permissions\" and **Native App** for \"Type",
+  "Media (1)": "Media (1)",
+  "Media (2)": "Media (2)",
+  "Media (3)": "Media (3)",
+  "Tweet ID": "Tweet ID",
+  "The text of the tweet": "The text of the tweet",
+  "An image, video or GIF url or base64 to attach to the tweet": "An image, video or GIF url or base64 to attach to the tweet",
+  "The ID of the tweet to reply too": "The ID of the tweet to reply too."
+}

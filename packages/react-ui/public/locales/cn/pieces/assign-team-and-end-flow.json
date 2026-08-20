@@ -1,0 +1,15 @@
+{
+  "Assign Team and End Flow": "分配团队并结束流程",
+  "Call for service and end the flow": "调用服务并结束流程",
+  "End Message": "结束消息",
+  "The message you want to say before conversation ended": "对话结束前你想说的消息",
+  "Assign Team": "分配团队",
+  "Team Selection": "团队选择",
+  "Representative Selection": "代表人员选择",
+  "Team": "团队",
+  "Select a team": "选择团队",
+  "Representative": "代表人员",
+  "Select a representative": "选择代表人员",
+  "Error loading teams": "加载团队时出错",
+  "Error loading users": "加载人员时出错"
+}

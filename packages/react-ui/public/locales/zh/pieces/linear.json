@@ -1,0 +1,22 @@
+{
+  "Issue tracking for modern software teams": "Issue tracking for modern software teams",
+  "\nTo obtain your API key, follow these steps:\n\n1. Go to settings by clicking your profile-pic (top-left)\n2. Go to API section inside My Account.\n3. On Personal API keys, give label and press create key": "\nTo obtain your API key, follow these steps:\n\n1. Go to settings by clicking your profile-pic (top-left)\n2. Go to API section inside My Account.\n3. On Personal API keys, give label and press create key.",
+  "Create a new issue in Linear workspace": "Create a new issue in Linear workspace",
+  "Update a issue in Linear Workspace": "Update a issue in Linear Workspace",
+  "Create a new project in Linear workspace": "Create a new project in Linear workspace",
+  "Update a existing project in Linear workspace": "Update a existing project in Linear workspace",
+  "Create a new comment on an issue in Linear workspace": "Create a new comment on an issue in Linear workspace",
+  "Icon": "Icon",
+  "Target Date": "Target Date",
+  "The team for which the issue, project or comment will be created": "The team for which the issue, project or comment will be created",
+  "Status of the Issue": "Status of the Issue",
+  "Assignee of the Issue / Comment": "Assignee of the Issue / Comment",
+  "Priority of the Issue": "Priority of the Issue",
+  "ID of Template": "ID of Template",
+  "ID of Linear Issue": "ID of Linear Issue",
+  "ID of Linear Project": "ID of Linear Project",
+  "Removed Issue": "Removed Issue",
+  "Triggers when Linear receives a new issue": "Triggers when Linear receives a new issue",
+  "Triggers when an existing Linear issue is updated": "Triggers when an existing Linear issue is updated",
+  "Triggers when an existing Linear issue is removed": "Triggers when an existing Linear issue is removed"
+}

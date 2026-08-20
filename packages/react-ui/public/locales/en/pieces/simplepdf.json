@@ -1,0 +1,4 @@
+{
+  "PDF editing and generation tool": "PDF editing and generation tool",
+  "\n- Paste this URL in the webhook integration endpoint:\n```text\n{{webhookUrl}}\n```\n- Click update (keep other settings unchanged)\n<br>\n<br>\n\n_[Read more about configuring webhooks](https://simplepdf.eu/help/how-to/configure-webhooks-pdf-form-submissions)_\n": "\n- Paste this URL in the webhook integration endpoint:\n```text\n{{webhookUrl}}\n```\n- Click update (keep other settings unchanged)\n<br>\n<br>\n\n_[Read more about configuring webhooks](https://simplepdf.eu/help/how-to/configure-webhooks-pdf-form-submissions)_\n"
+}

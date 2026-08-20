@@ -1,0 +1,7 @@
+{
+  "Streamline your scheduling": "Streamline your scheduling",
+  "\n# Personal Access Token\n1- Visit https://tidycal.com/integrations/oauth and click on \"Create a new token\"\n2- Enter a name for your token and click on \"Create\"\n": "\n# Personal Access Token\n1- Visit https://tidycal.com/integrations/oauth and click on \"Create a new token\"\n2- Enter a name for your token and click on \"Create\"\n",
+  "Booking Canceled": "Booking Canceled",
+  "Triggers when a new booking is canceled": "Triggers when a new booking is canceled",
+  "Triggers when a new booking is created": "Triggers when a new booking is created"
+}

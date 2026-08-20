@@ -1,0 +1,21 @@
+{
+  "AI-powered assistant for your knowledge base": "AI-powered assistant for your knowledge base.",
+  "\n    Generate your API key in the dashboard: https://app.chataid.com/settings/automations\n": "\n    Generate your API key in the dashboard: https://app.chataid.com/settings/automations\n",
+  "Add Custom Sources": "Add Custom Sources",
+  "Ask Questions": "Ask Questions",
+  "Get Custom Source by ID": "Get Custom Source by ID",
+  "Upload one or more files as custom sources for training": "Upload one or more files as custom sources for training",
+  "Query your Chat Aid knowledge base and receive AI-generated answers with source citations": "Query your Chat Aid knowledge base and receive AI-generated answers with source citations",
+  "Retrieve single source details by ID": "Retrieve single source details by ID",
+  "Files": "Files",
+  "Team ID": "團隊 ID",
+  "Parent Timestamp": "Parent Timestamp",
+  "Message Timestamp": "Message Timestamp",
+  "Source ID": "Source ID",
+  "One or more files to upload (PDF, Word, Text, Markdown, HTML, Excel, CSV, PowerPoint, PNG, JPEG, GIF)": "One or more files to upload (PDF, Word, Text, Markdown, HTML, Excel, CSV, PowerPoint, PNG, JPEG, GIF)",
+  "Optional team ID (defaults to org-wide)": "Optional team ID (defaults to org-wide)",
+  "The question to ask the knowledge base": "The question to ask the knowledge base",
+  "Optional Unix timestamp for conversation threading. Use the same value for related questions in a conversation": "Optional Unix timestamp for conversation threading. Use the same value for related questions in a conversation.",
+  "Optional Unix timestamp of current message. Use with parentTs for follow-up questions in a conversation": "Optional Unix timestamp of current message. Use with parentTs for follow-up questions in a conversation.",
+  "The ID of the custom source to retrieve": "The ID of the custom source to retrieve"
+}

@@ -1,0 +1,18 @@
+{
+  "Makes a GraphQL request.": "发出 GraphQL 请求。",
+  "Send Request": "发送请求",
+  "URL": "URL",
+  "Headers": "请求头",
+  "Query params": "查询参数",
+  "Query": "查询",
+  "Variables": "变量",
+  "Use Proxy": "使用代理",
+  "Use a proxy for this request": "为此请求使用代理",
+  "Proxy Settings": "代理设置",
+  "Proxy Host": "代理主机",
+  "Proxy Port": "代理端口",
+  "Proxy Username": "代理用户名",
+  "Proxy Password": "代理密码",
+  "Timeout(in seconds)": "超时（秒）",
+  "No Error on Failure": "失败时不纠错"
+}

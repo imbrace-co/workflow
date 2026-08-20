@@ -1,0 +1,16 @@
+{
+  "Consumer Key": "Consumer Key",
+  "Consumer Secret": "Consumer Secret",
+  "Token Secret": "Token Secret",
+  "Your NetSuite account ID": "Your NetSuite account ID",
+  "Your NetSuite consumer key": "Your NetSuite consumer key",
+  "Your NetSuite consumer secret": "Your NetSuite consumer secret",
+  "Your NetSuite token ID": "Your NetSuite token ID",
+  "Your NetSuite token secret": "Your NetSuite token secret",
+  "Vendor ID": "Vendor ID",
+  "Arguments": "Arguments",
+  "The ID of the vendor to retrieve": "The ID of the vendor to retrieve.",
+  "\n- **DO NOT** insert dynamic input directly into the query string. Instead, use :1, :2, :3 and add them in args for parameterized queries\n- Arguments are treated as string and inserted as a [Text Literal](https://docs.oracle.com/en/database/oracle/oracle-database/26/sqlrf/Literals.html)\n": "\n- **DO NOT** insert dynamic input directly into the query string. Instead, use :1, :2, :3 and add them in args for parameterized queries\n- Arguments are treated as string and inserted as a [Text Literal](https://docs.oracle.com/en/database/oracle/oracle-database/26/sqlrf/Literals.html)\n",
+  "Please use :1, :2, :3 etc. for parameterized queries": "Please use :1, :2, :3 etc. for parameterized queries",
+  "Arguments to be used in the query": "Arguments to be used in the query"
+}

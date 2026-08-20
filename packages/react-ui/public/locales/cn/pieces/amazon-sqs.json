@@ -1,0 +1,12 @@
+{
+  "Amazon SQS": "亚马逊 SQS",
+  "Access Key ID": "访问密钥 ID",
+  "Secret Access Key": "安全访问密钥",
+  "Region": "区域",
+  "Send Message": "发送消息",
+  "Sends a message to an Amazon SQS queue.": "向亚马逊 SQS 队列发送消息。",
+  "Queue URL": "队列 URL",
+  "The URL of the SQS queue": "SQS 队列的 URL",
+  "Message Body": "消息正文",
+  "The body of the message": "消息的内容正文"
+}

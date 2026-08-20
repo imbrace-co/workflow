@@ -1,0 +1,13 @@
+{
+  "Trigger a flow through human input": "Trigger a flow through human input.",
+  "Text (Markdown)": "Text (Markdown)",
+  "Attachment": "Attachment",
+  "Web Form": "Web Form",
+  "Trigger the flow by submitting a form": "Trigger the flow by submitting a form.",
+  "Trigger the flow by sending a message": "Trigger the flow by sending a message",
+  "Wait for Response": "Wait for Response",
+  "**Published Form URL:**\n```text\n{{formUrl}}\n```\nUse this for production, views the published version of the form.\n<br>\n<br>\n**Draft Form URL:**\n```text\n{{formUrl}}?useDraft=true\n```\nUse this to generate sample data, views the draft version of the form (the one you are editing now).\n": "**Published Form URL:**\n```text\n{{formUrl}}\n```\nUse this for production, views the published version of the form.\n<br>\n<br>\n**Draft Form URL:**\n```text\n{{formUrl}}?useDraft=true\n```\nUse this to generate sample data, views the draft version of the form (the one you are editing now).\n",
+  "\nIf **Wait for Response** is enabled, use **Respond on UI** in your flow to provide a response back to the form.\n": "\nIf **Wait for Response** is enabled, use **Respond on UI** in your flow to provide a response back to the form.\n",
+  "\nThis trigger sets up a chat interface. Ensure that **Respond on UI** is used in your flow": "\nThis trigger sets up a chat interface. Ensure that **Respond on UI** is used in your flow",
+  "The name of the chatbot": "The name of the chatbot"
+}

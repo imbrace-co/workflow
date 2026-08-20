@@ -1,0 +1,13 @@
+{
+  "All-in-one membership software": "All-in-one membership software",
+  "The api key of the brilliant directories account account": "The api key of the brilliant directories account account",
+  "The url of the brilliant directories instance": "The url of the brilliant directories instance.",
+  "\n  Brilliant Directories Authentication.\n\n  Please enter your API key which can be generated from here: https://ww2.managemydirectory.com/admin/apiSettings\n\n  Then enter your brilliant directories website instance URL appended with /api like the example.\n  ": "\n  Brilliant Directories Authentication.\n\n  Please enter your API key which can be generated from here: https://ww2.managemydirectory.com/admin/apiSettings\n\n  Then enter your brilliant directories website instance URL appended with /api like the example.\n  。",
+  "Create new User": "Create new User",
+  "Creates a new user in your brilliant directories site": "Creates a new user in your brilliant directories site",
+  "Meta": "Meta",
+  "Email address for the users account": "Email address for the users account",
+  "Password for the new user account": "Password for the new user account",
+  "The subscription ID from your website": "The subscription ID from your website",
+  "Additional fields for the new user account": "Additional fields for the new user account"
+}

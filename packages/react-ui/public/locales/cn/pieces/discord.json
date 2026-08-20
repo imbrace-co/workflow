@@ -1,0 +1,17 @@
+{
+  "Get Direct Message Details": "获取直接消息详情",
+  "Add a Space Member": "添加空间成员",
+  "Get Message Details": "获取消息详情",
+  "Search Messages": "搜索消息",
+  "Find Member": "查找成员",
+  "Search space member by email": "通过电子邮件查找空间成员",
+  "Discord": "Discord",
+  "Send a discord message via webhook": "通过 Webhook 发送 Discord 消息",
+  "send a message to a channel asking for approval and wait for a response": "向频道发送消息以请求批准，并等待回复",
+  "Retrieve Post": "获取帖子",
+  "Fetch Post Comments": "获取帖子评论",
+  "Edit Post": "编辑帖子",
+  "Edit Comment": "编辑评论",
+  "Delete Post": "删除帖子",
+  "Delete Comment": "删除评论"
+}

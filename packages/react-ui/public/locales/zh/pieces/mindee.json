@@ -1,0 +1,16 @@
+{
+  "Document automation API": "Document automation API",
+  "\n  #### To obtain access your Api Key\n  1. Sign up and log in to Mindee\n  2. Go to [API Key page](https://platform.mindee.com/api-keys)\n  3. Copy the Key and paste below.\n  ": "\n  #### To obtain access your Api Key\n  1. Sign up and log in to Mindee\n  2. Go to [API Key page](https://platform.mindee.com/api-keys)\n  3. Copy the Key and paste below.\n  。",
+  "Extract Document": "Extract Document",
+  "Parse details of a document using OCR": "Parse details of a document using OCR.",
+  "API Name": "API Name",
+  "Refers to your username or organization name with which you signed up with": "Refers to your username or organization name with which you signed up with.",
+  "Refers to the name of the API your are using": "Refers to the name of the API your are using.",
+  "Remote file URL or Base64 string. We currently support .pdf (slower), .jpg, .png, .webp, .tiff and .heic formats": "Remote file URL or Base64 string. We currently support .pdf (slower), .jpg, .png, .webp, .tiff and .heic formats",
+  "Bank Account Details OCR": "Bank Account Details OCR",
+  "Receipt OCR": "Receipt OCR",
+  "Passport OCR": "Passport OCR",
+  "Invoice OCR": "Invoice OCR",
+  "Proof of Address OCR": "Proof of Address OCR",
+  "Financial Documents OCR": "Financial Documents OCR"
+}

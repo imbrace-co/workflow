@@ -1,0 +1,14 @@
+{
+  "Amazon SNS": "亞馬遜 SNS",
+  "This piece allows you to send messages to Amazon SNS topics.": "此組件允許您向亞馬遜 SNS 主題傳送訊息。",
+  "Refer to [this](https://docs.aws.amazon.com/general/latest/gr/sns.html) for **Region**. Leave the **Endpoint** blank.": "有關 **區域** 的資訊，請參閱[此處](https://docs.aws.amazon.com/general/latest/gr/sns.html)。請將 **端點** 留空。",
+  "Access Key ID": "存取金鑰 ID",
+  "Secret Access Key": "安全存取金鑰",
+  "Region": "區域",
+  "Endpoint": "端點",
+  "Send Message": "傳送訊息",
+  "Sends a message to an Amazon SNS topic.": "向亞馬遜 SNS 主題傳送訊息。",
+  "Topic": "主題",
+  "Select a topic": "選擇一個主題",
+  "Message": "訊息"
+}

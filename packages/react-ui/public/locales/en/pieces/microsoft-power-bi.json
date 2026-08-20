@@ -1,0 +1,17 @@
+{
+  "Create and manage Power BI datasets and push data to them": "Create and manage Power BI datasets and push data to them",
+  "Dataset Name": "Dataset Name",
+  "Dataset Mode": "Dataset Mode",
+  "Dataset": "Dataset",
+  "Rows": "Rows",
+  "Skip Dataset Refresh": "Skip Dataset Refresh",
+  "Name of the dataset to create": "Name of the dataset to create",
+  "The mode of the dataset": "The mode of the dataset",
+  "Define the tables and their columns for the dataset (JSON format)": "Define the tables and their columns for the dataset (JSON format)",
+  "Select a dataset": "Select a dataset.",
+  "Select a table": "Select a table",
+  "JSON object containing the rows to add to the table. Each row must match your table schema": "JSON object containing the rows to add to the table. Each row must match your table schema.",
+  "Skip refreshing the dataset after pushing data (only applies to Push and PushStreaming modes)": "Skip refreshing the dataset after pushing data (only applies to Push and PushStreaming modes)",
+  "Streaming": "Streaming",
+  "PushStreaming": "PushStreaming"
+}

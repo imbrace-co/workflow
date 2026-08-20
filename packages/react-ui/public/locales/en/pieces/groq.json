@@ -1,0 +1,23 @@
+{
+  "Use Groq's fast language models and audio processing capabilities": "Use Groq's fast language models and audio processing capabilities.",
+  "Enter your Groq API Key": "Enter your Groq API Key",
+  "Transcribe Audio": "Transcribe Audio",
+  "Translate Audio": "Translate Audio",
+  "Ask Groq anything using fast language models": "Ask Groq anything using fast language models.",
+  "Transcribes audio into text in the input language": "Transcribes audio into text in the input language.",
+  "Translates audio into English text": "Translates audio into English text.",
+  "The maximum number of tokens to generate. The total length of input tokens and generated tokens is limited by the model's context length": "The maximum number of tokens to generate. The total length of input tokens and generated tokens is limited by the model's context length.",
+  "Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics": "Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics.",
+  "A memory key that will keep the chat history shared across runs and flows. Keep it empty to leave Groq without memory of previous messages": "A memory key that will keep the chat history shared across runs and flows. Keep it empty to leave Groq without memory of previous messages.",
+  "The audio file to transcribe. Supported formats: flac, mp3, mp4, mpeg, mpga, m4a, ogg, wav, webm": "The audio file to transcribe. Supported formats: flac, mp3, mp4, mpeg, mpga, m4a, ogg, wav, webm.",
+  "The model to use for transcription": "The model to use for transcription.",
+  "The language of the input audio in ISO-639-1 format (e.g., \"en\" for English). This will improve accuracy and latency": "The language of the input audio in ISO-639-1 format (e.g., \"en\" for English). This will improve accuracy and latency.",
+  "An optional text to guide the model's style or continue a previous audio segment. The prompt should match the audio language": "An optional text to guide the model's style or continue a previous audio segment. The prompt should match the audio language.",
+  "The sampling temperature, between 0 and 1. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic": "The sampling temperature, between 0 and 1. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.",
+  "The format of the transcript output": "The format of the transcript output.",
+  "The audio file to translate. Supported formats: flac, mp3, mp4, mpeg, mpga, m4a, ogg, wav, webm": "The audio file to translate. Supported formats: flac, mp3, mp4, mpeg, mpga, m4a, ogg, wav, webm.",
+  "The model to use for translation": "The model to use for translation.",
+  "An optional text in English to guide the model's style or continue a previous audio segment": "An optional text in English to guide the model's style or continue a previous audio segment.",
+  "The format of the translation output": "The format of the translation output.",
+  "Verbose JSON": "Verbose JSON"
+}

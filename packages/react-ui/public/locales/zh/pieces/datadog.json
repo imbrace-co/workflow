@@ -1,0 +1,4 @@
+{
+  "You can either use the full URL or the relative path to the base URL": "您可以直接使用完整 URL，或者使用相對於基礎 URL 的相對路徑。",
+  "Authorization headers are injected automatically from your connection.": "驗證標頭會自動從您的連線中注入。"
+}

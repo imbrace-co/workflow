@@ -1,0 +1,15 @@
+{
+  "AI-powered web scraping and content extraction": "AI-powered web scraping and content extraction.",
+  "\nFollow these steps to obtain your ScrapeGraphAI API Key:\n\n1. Visit [ScrapeGraphAI](https://scrapegraphai.com) and create an account.\n2. Log in and navigate to your dashboard.\n3. Locate and copy your API key from the dashboard.\n": "\nFollow these steps to obtain your ScrapeGraphAI API Key:\n\n1. Visit [ScrapeGraphAI](https://scrapegraphai.com) and create an account.\n2. Log in and navigate to your dashboard.\n3. Locate and copy your API key from the dashboard.\n",
+  "Smart Scraper": "Smart Scraper",
+  "Local Scraper": "Local Scraper",
+  "Convert to Markdown": "Convert to Markdown",
+  "Extract content from a webpage using AI by providing a natural language prompt": "Extract content from a webpage using AI by providing a natural language prompt.",
+  "Extract content from HTML content using AI by providing a natural language prompt": "Extract content from HTML content using AI by providing a natural language prompt.",
+  "Convert any webpage into clean, readable Markdown format": "Convert any webpage into clean, readable Markdown format.",
+  "Output Schema": "Output Schema",
+  "Describe what information you want to extract in natural language": "Describe what information you want to extract in natural language.",
+  "Optional schema to structure the output data": "Optional schema to structure the output data.",
+  "The HTML content to process (max 2MB)": "The HTML content to process (max 2MB).",
+  "The webpage URL to convert to Markdown": "The webpage URL to convert to Markdown"
+}

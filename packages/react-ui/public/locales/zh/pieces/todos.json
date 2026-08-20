@@ -1,0 +1,8 @@
+{
+  "Create tasks for project members to take actions, useful for approvals, reviews, and manual actions performed by humans": "Create tasks for project members to take actions, useful for approvals, reviews, and manual actions performed by humans",
+  "Create Todo and Wait": "Create Todo and Wait",
+  "Creates a todo for a user and wait for their response or take action": "Creates a todo for a user and wait for their response or take action.",
+  "Status Options": "Status Options",
+  "These details will be displayed for the assignee. Add the full context so they can take proper action, You can also use markdown formatting": "These details will be displayed for the assignee. Add the full context so they can take proper action, You can also use markdown formatting.",
+  "The ID of the task to wait for approval": "The ID of the task to wait for approval"
+}

@@ -1,0 +1,14 @@
+{
+  "Amazon SNS": "Amazon SNS",
+  "This piece allows you to send messages to Amazon SNS topics.": "This piece allows you to send messages to Amazon SNS topics.",
+  "Refer to [this](https://docs.aws.amazon.com/general/latest/gr/sns.html) for **Region**. Leave the **Endpoint** blank.": "Refer to [this](https://docs.aws.amazon.com/general/latest/gr/sns.html) for **Region**. Leave the **Endpoint** blank.",
+  "Access Key ID": "Access Key ID",
+  "Secret Access Key": "Secret Access Key",
+  "Region": "Region",
+  "Endpoint": "Endpoint",
+  "Send Message": "Send Message",
+  "Sends a message to an Amazon SNS topic.": "Sends a message to an Amazon SNS topic.",
+  "Topic": "Topic",
+  "Select a topic": "Select a topic",
+  "Message": "Message"
+}

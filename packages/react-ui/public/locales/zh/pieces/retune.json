@@ -1,0 +1,8 @@
+{
+  "Everything you need to transform your business with AI, from custom chatbots to autonomous agents": "Everything you need to transform your business with AI, from custom chatbots to autonomous agents.",
+  "The ID of the chat you want to use": "The ID of the chat you want to use.",
+  "Your re:tune API key": "Your re:tune API key.",
+  "\nFollow these instructions to get your re:tune chat ID and API Key:\n\n1. Visit the chatbots page: https://retune.so/chats\n2. Once on the website, locate and click on the chatbot you want to use\n3. From the URL, copy the chat ID you want to use;\ne.g from this: https://retune.so/chat/acewocwe-123123-123123-123123/ your chat ID is \"acewocwe-123123-123123-123123\"\n4. To get the API key, go to https://retune.so/settings\n5. Scroll to the bottom to find \"Re:tune API Keys\" and copy your key below\n": "\nFollow these instructions to get your re:tune chat ID and API Key:\n\n1. Visit the chatbots page: https://retune.so/chats\n2. Once on the website, locate and click on the chatbot you want to use\n3. From the URL, copy the chat ID you want to use;\ne.g from this: https://retune.so/chat/acewocwe-123123-123123-123123/ your chat ID is \"acewocwe-123123-123123-123123\"\n4. To get the API key, go to https://retune.so/settings\n5. Scroll to the bottom to find \"Re:tune API Keys\" and copy your key below\n",
+  "Sends a message to an existing thread with a chatbot": "Sends a message to an existing thread with a chatbot.",
+  "The thread you want to send the message to": "The thread you want to send the message to."
+}

@@ -1,0 +1,13 @@
+{
+  "Authorize URL": "Authorize URL",
+  "Token URL": "Token URL",
+  "Scopes (whitespace separated)": "Scopes (whitespace separated)",
+  "OAuth2 Authorize URL": "OAuth2 Authorize URL",
+  "OAuth2 Token URL": "OAuth2 Token URL",
+  "OAuth2 Scopes": "OAuth2 Scopes",
+  "OAuth2": "OAuth2",
+  "Use Proxy": "Use Proxy",
+  "Proxy Settings": "Proxy Settings",
+  "Use a proxy for this request": "Use a proxy for this request",
+  "Form Data": "表單數據"
+}

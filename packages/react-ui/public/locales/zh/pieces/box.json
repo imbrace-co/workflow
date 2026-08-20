@@ -1,0 +1,15 @@
+{
+  "Secure content management and collaboration": "Secure content management and collaboration",
+  "New Folder": "新建文件夹",
+  "New Comment": "New Comment",
+  "Triggers when a file is uploaded": "Triggers when a file is uploaded",
+  "Triggers when a folder is created": "Triggers when a folder is created",
+  "Triggers when a comment is created": "Triggers when a comment is created",
+  "Folder ID": "資料夾 ID",
+  "File/Folder ID": "File/Folder ID",
+  "Item Type": "Item Type",
+  "The ID of the folder in which file uploads will trigger this webhook": "The ID of the folder in which file uploads will trigger this webhook",
+  "The ID of the item to trigger a webhook": "The ID of the item to trigger a webhook",
+  "The type of the item to trigger a webhook": "The type of the item to trigger a webhook",
+  "Folder": "文件夹"
+}

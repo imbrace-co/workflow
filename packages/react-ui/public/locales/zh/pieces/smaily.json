@@ -1,0 +1,8 @@
+{
+  "\n  1. Click on profile pic (top right corner), navigate to **Preferences**.\n  2. Go to **Integrations** tab and click on **Create a New User**.\n  3. Copy generated domain, user and password": "\n  1. Click on profile pic (top right corner), navigate to **Preferences**.\n  2. Go to **Integrations** tab and click on **Create a New User**.\n  3. Copy generated domain, user and password.",
+  "Get Subscriber": "Get Subscriber",
+  "Creates a new subscriber or update an existing subscriber by email": "Creates a new subscriber or update an existing subscriber by email.",
+  "retrieves detailed subscriber information for a given email address": "retrieves detailed subscriber information for a given email address.",
+  "Subscription Status": "Subscription Status",
+  "Go to **Subscribers Tab-> All Subscribers -> Manage Fields** to get custom field names": "Go to **Subscribers Tab-> All Subscribers -> Manage Fields** to get custom field names."
+}

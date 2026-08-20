@@ -1,0 +1,182 @@
+### STAGE 1: build (full toolchain, identical build steps to before) ###
+FROM node:20.19-bullseye-slim AS build
+
+ARG NODE_MEMORY=4096
+
+WORKDIR /usr/src/app
+
+# Install system dependencies
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+        python3 \
+        g++ \
+        build-essential \
+        git \
+        procps \
+        ca-certificates \
+        curl \
+        unzip && \
+    update-ca-certificates && \
+    rm -rf /var/lib/apt/lists/*
+
+# Install bun and verify installation in one layer
+RUN curl -fsSL https://bun.sh/install | bash -s "bun-v1.3.1" && \
+    /root/.bun/bin/bun --version
+
+ENV BUN_INSTALL="/root/.bun"
+ENV PATH="${BUN_INSTALL}/bin:${PATH}"
+
+# Set environment variables
+ENV NX_DAEMON=false
+ENV NODE_OPTIONS="--max-old-space-size=${NODE_MEMORY}"
+
+# Copy workspace configuration files
+COPY .npmrc package.json bun.lock tsconfig.base.json nx.json .eslintrc.json .eslintrc.base.json jest.config.ts ./
+
+# install isolated-vm in a parent directory to avoid linking the package in every sandbox
+
+
+# Pre-install commonly needed packages with bun
+# Install global npm packages in a single layer
+RUN --mount=type=cache,target=/root/.npm \
+    npm install -g --no-fund --no-audit \
+    node-gyp \
+    npm@9.9.3 \
+    pm2@6.0.10 \
+    typescript@4.9.4
+
+# Install isolated-vm globally (needed for sandboxes)
+RUN --mount=type=cache,target=/root/.bun/install/cache \
+    cd /usr/src && bun install isolated-vm@5.0.1
+
+# Install dependencies using the full bun path (without frozen lockfile since we may add packages)
+RUN ${BUN_INSTALL}/bin/bun install
+
+# Copy all necessary source code for NX workspace
+COPY ./packages ./packages
+
+# Build shared package first (dependency for pieces and server)
+RUN npx nx build shared
+
+# Build pieces packages (framework, common, common-ai, and all available community pieces)
+RUN npx nx build pieces-framework
+RUN npx nx build pieces-common
+# RUN npx nx build common-ai
+# RUN npx nx build pieces-send-message
+
+# Build community pieces (builtin package)
+RUN npx nx build pieces-builtin --skip-nx-cache --parallel=1
+
+# Copy scripts directory for metadata generation
+COPY ./scripts ./scripts
+RUN node scripts/generate-builtin-metadata.mjs
+
+# Build community pieces that are listed in AP_DEV_PIECES
+# RUN npx nx build pieces-webhook
+# RUN npx nx build pieces-http
+
+# Create node_modules symlinks for runtime resolution
+# Copy the built framework packages to node_modules so they can be found at runtime
+RUN mkdir -p node_modules/@activepieces
+RUN cp -r dist/packages/pieces/community/framework node_modules/@activepieces/pieces-framework
+RUN cp -r dist/packages/pieces/community/common node_modules/@activepieces/pieces-common
+RUN cp -r dist/packages/shared node_modules/@activepieces/shared
+# RUN cp -r dist/packages/pieces/community/common-ai node_modules/@activepieces/common-ai
+# RUN cp -r dist/packages/pieces/community/send-message node_modules/@activepieces/send-message
+
+# Copy built builtin package to node_modules for runtime resolution
+RUN cp -r dist/packages/pieces/builtin node_modules/@activepieces/pieces-builtin
+
+# Copy built community pieces to node_modules for runtime resolution
+# RUN cp -r dist/packages/pieces/community/webhook node_modules/@activepieces/webhook
+# RUN cp -r dist/packages/pieces/community/http node_modules/@activepieces/http
+
+# Fix common-ai package.json to use proper dependencies instead of broken link paths
+
+# Build the server API
+RUN npx nx build server-api --configuration production  --skip-nx-cache
+
+# Augment the generated server-api package.json with everything the runtime
+# needs that esbuild did not trace, so a SINGLE coherent `bun install` produces
+# one internally consistent dependency tree:
+#   - builtin-piece npm deps (packages/pieces/builtin/package.json) — builtin
+#     pieces are NOT bundled; the forked engine require()s them at runtime
+#     (e.g. @sinclair/typebox, openpgp, googleapis).
+#   - the engine's webpack externals (packages/engine/webpack.config.js),
+#     especially aws-msk-iam-sasl-signer-js which the engine require()s EAGERLY
+#     at startup.
+# A single install is REQUIRED: merging separately-resolved node_modules trees
+# causes version skew (e.g. ERR_PACKAGE_PATH_NOT_EXPORTED between @aws-sdk and
+# @smithy when an incompatible @smithy/core gets hoisted). Existing versions in
+# the generated package.json always win on collision.
+RUN node -e "const fs=require('fs'); \
+  const apiPath='dist/packages/server/api/package.json'; \
+  const api=JSON.parse(fs.readFileSync(apiPath)); api.dependencies=api.dependencies||{}; \
+  const builtin=(JSON.parse(fs.readFileSync('dist/packages/pieces/builtin/package.json')).dependencies)||{}; \
+  for(const [k,v] of Object.entries(builtin)){ if(String(v).startsWith('workspace:'))continue; if(!api.dependencies[k]) api.dependencies[k]=v; } \
+  const externals=['utf-8-validate','bufferutil','aws-msk-iam-sasl-signer-js','kerberos','@mongodb-js/zstd','snappy','mongodb-client-encryption','@aws-sdk/client-sts','@aws-sdk/credential-providers','@smithy/property-provider','@smithy/shared-ini-file-loader','@smithy/credential-provider-imds']; \
+  for(const n of externals){ if(api.dependencies[n])continue; try{ api.dependencies[n]=require(n+'/package.json').version; }catch(e){} } \
+  fs.writeFileSync(apiPath, JSON.stringify(api,null,2)); \
+  console.log('server-api runtime deps after augmentation:', Object.keys(api.dependencies).length);"
+
+RUN --mount=type=cache,target=/root/.bun/install/cache \
+    cd dist/packages/server/api && \
+    bun install --production
+
+# Relocate the single coherent tree to the workspace-root node_modules. Both the
+# backend bundle (dist/packages/server/api/main.cjs) and the backend-forked
+# engine (cache/v7/common/main.js) resolve by walking up to /usr/src/app/node_modules.
+# Done in the build stage so the final image carries ONLY ONE copy of these deps.
+RUN mv dist/packages/server/api/node_modules /tmp/runtime-node-modules && \
+    mkdir -p /tmp/runtime-node-modules/@activepieces && \
+    cp -r node_modules/@activepieces/. /tmp/runtime-node-modules/@activepieces/
+
+### STAGE 2: run (slim) ###
+FROM node:20.19-bullseye-slim AS run
+
+ARG NODE_MEMORY=4096
+
+WORKDIR /usr/src/app
+
+# Runtime-only apt deps. No build-essential/g++/python3/git.
+# bun is required at runtime: the in-process worker shells out to `bun install` /
+# `bun build` to compile Code steps (package-manager.ts, with --ignore-scripts).
+# unzip + curl are needed by the bun installer below.
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+        procps \
+        ca-certificates \
+        curl \
+        unzip && \
+    update-ca-certificates && \
+    rm -rf /var/lib/apt/lists/*
+
+# Install bun only (no global pm2/node-gyp/typescript/npm)
+RUN curl -fsSL https://bun.sh/install | bash -s "bun-v1.3.1" && \
+    /root/.bun/bin/bun --version
+ENV BUN_INSTALL="/root/.bun"
+ENV PATH="${BUN_INSTALL}/bin:${PATH}"
+
+ENV NX_DAEMON=false
+ENV NODE_OPTIONS="--max-old-space-size=${NODE_MEMORY}"
+
+# Built backend bundle + sourcemap (its node_modules was relocated to the
+# workspace root in the build stage — see consolidation step above)
+COPY --from=build /usr/src/app/dist/packages/server ./dist/packages/server
+# Forked-engine binary used by the in-process worker (ENGINE_EXECUTABLE_PATH)
+COPY --from=build /usr/src/app/dist/packages/engine ./dist/packages/engine
+# Built pieces dist: builtin metadata json + FILE piece resolution
+COPY --from=build /usr/src/app/dist/packages/pieces ./dist/packages/pieces
+COPY --from=build /usr/src/app/dist/packages/shared ./dist/packages/shared
+# Single consolidated runtime node_modules: backend prod deps + builtin-piece
+# deps + engine externals + @activepieces. Resolved by the backend bundle AND
+# the forked engine (both walk up to /usr/src/app/node_modules).
+COPY --from=build /tmp/runtime-node-modules ./node_modules
+# Parent isolated-vm install (only exercised under SANDBOX_* modes; mirrors current layout)
+COPY --from=build /usr/src/node_modules/isolated-vm /usr/src/node_modules/isolated-vm
+
+# Expose port
+EXPOSE 3000
+
+# Start the application with source maps enabled
+CMD ["node", "--enable-source-maps", "dist/packages/server/api/main.cjs"]

@@ -1,0 +1,17 @@
+{
+  "\nThis piece allows you to upload files to BackBlaze Bucket compatible services.\n\nBackBlaze Settings:\nRegions: https://www.backblaze.com/apidocs/introduction-to-the-s3-compatible-api\nEndpoint: leave blank\n": "\nThis piece allows you to upload files to BackBlaze Bucket compatible services.\n\nBackBlaze Settings:\nRegions: https://www.backblaze.com/apidocs/introduction-to-the-s3-compatible-api\nEndpoint: leave blank\n",
+  "my-file-name (no extension). write full path if you want to store in the directories or sub-directories": "my-file-name (no extension). write full path if you want to store in the directories or sub-directories.",
+  "The key of the file to read. include extension if file has any extension": "The key of the file to read. include extension if file has any extension.",
+  "image/png": "image/png",
+  "image/jpeg": "image/jpeg",
+  "image/gif": "image/gif",
+  "audio/mpeg": "audio/mpeg",
+  "audio/wav": "audio/wav",
+  "video/mp4": "video/mp4",
+  "application/pdf": "application/pdf",
+  "application/msword": "application/msword",
+  "text/plain": "text/plain",
+  "application/json": "application/json",
+  "New File": "New File",
+  "Trigger when a new file is uploaded": "Trigger when a new file is uploaded."
+}

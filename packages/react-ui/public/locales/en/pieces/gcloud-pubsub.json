@@ -1,0 +1,7 @@
+{
+  "Service Key (JSON)": "Service Key (JSON)",
+  "New Message": "New Message",
+  "Trigger when a new message is sended": "Trigger when a new message is sended.",
+  "Subscription name": "Subscription name",
+  "Ack Deadline Seconds": "Ack Deadline Seconds"
+}

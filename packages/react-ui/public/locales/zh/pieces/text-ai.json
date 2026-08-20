@@ -1,0 +1,7 @@
+{
+  "Conversation Key": "Conversation Key",
+  "Creativity": "Creativity",
+  "Web Search Options": "Web Search Options",
+  "Controls the creativity of the AI response. A higher value will make the AI more creative and a lower value will make it more deterministic": "Controls the creativity of the AI response. A higher value will make the AI more creative and a lower value will make it more deterministic.",
+  "Whether to use web search to find information for the AI to use in its response": "Whether to use web search to find information for the AI to use in its response."
+}

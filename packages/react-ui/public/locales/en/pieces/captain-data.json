@@ -1,0 +1,14 @@
+{
+  "Project ID": "Project ID",
+  "Launch a workflow": "Launch a workflow",
+  "Get job results": "Get job results",
+  "Get all results for a specific job": "Get all results for a specific job",
+  "Workflow": "Workflow",
+  "Job name": "Job name",
+  "Inputs": "Inputs",
+  "Steps": "Steps",
+  "Delay (seconds)": "Delay (seconds)",
+  "Job": "Job",
+  "Inputs are the starting point of your workflow": "Inputs are the starting point of your workflow.",
+  "You need to configure each steps with:\n- accounts : The identifiers of the accounts you want to use for this step. The accounts indicated must match the integration used in the step (e.g A Linkedin account for a Search Linkedin People Profile step). You can find the UIDs in the \"Integrations' tab on the platform by clicking on a specific account \"Action\" button (copy account UID).\n- accounts_rotation_enabled: (Optional) Whether or not you want to enable the Accounts Rotation feature for this step (only cert": "You need to configure each steps with:\n- accounts : The identifiers of the accounts you want to use for this step. The accounts indicated must match the integration used in the step (e.g A Linkedin account for a Search Linkedin People Profile step). You can find the UIDs in the \"Integrations' tab on the platform by clicking on a specific account \"Action\" button (copy account UID).\n- accounts_rotation_enabled: (Optional) Whether or not you want to enable the Accounts Rotation feature for this step (only cert"
+}

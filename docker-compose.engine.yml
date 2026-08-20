@@ -1,0 +1,26 @@
+# Engine Service - Standalone
+services:
+  engine:
+    build:
+      context: .
+      dockerfile: Dockerfile.engine
+    container_name: ap-engine
+    restart: unless-stopped
+    ports:
+      - '3001:3001'
+    env_file:
+      - .env.engine.dev
+    networks:
+      - activepieces
+    volumes:
+      - engine_codes:/usr/src/app/codes
+      - engine_cache:/usr/src/app/cache
+
+volumes:
+  engine_codes:
+  engine_cache:
+
+networks:
+  activepieces:
+    external: true
+    name: activepieces

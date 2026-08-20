@@ -1,0 +1,14 @@
+{
+  "Amazon SNS": "亚马逊 SNS",
+  "This piece allows you to send messages to Amazon SNS topics.": "此组件允许您向亚马逊 SNS 主题发送消息。",
+  "Refer to [this](https://docs.aws.amazon.com/general/latest/gr/sns.html) for **Region**. Leave the **Endpoint** blank.": "有关 **区域** 的信息，请参阅[此处](https://docs.aws.amazon.com/general/latest/gr/sns.html)。请将 **端点** 留空。",
+  "Access Key ID": "访问密钥 ID",
+  "Secret Access Key": "安全访问密钥",
+  "Region": "区域",
+  "Endpoint": "端点",
+  "Send Message": "发送消息",
+  "Sends a message to an Amazon SNS topic.": "向亚马逊 SNS 主题发送消息。",
+  "Topic": "主题",
+  "Select a topic": "选择一个主题",
+  "Message": "消息"
+}

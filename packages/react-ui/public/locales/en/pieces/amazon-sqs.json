@@ -1,0 +1,12 @@
+{
+  "Amazon SQS": "Amazon SQS",
+  "Access Key ID": "Access Key ID",
+  "Secret Access Key": "Secret Access Key",
+  "Region": "Region",
+  "Send Message": "Send Message",
+  "Sends a message to an Amazon SQS queue.": "Sends a message to an Amazon SQS queue.",
+  "Queue URL": "Queue URL",
+  "The URL of the SQS queue": "The URL of the SQS queue",
+  "Message Body": "Message Body",
+  "The body of the message": "The body of the message"
+}

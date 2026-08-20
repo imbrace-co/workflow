@@ -1,0 +1,11 @@
+{
+  "Store or retrieve data from key/value database": "存储或从密钥/值数据库检索数据",
+  "Default Value": "默认值",
+  "Store Scope": "商店范围",
+  "Separator": "分隔符",
+  "Ignore if value exists": "忽略如果值存在",
+  "The storage scope of the value": "值的存储范围。",
+  "Separator between added values, use \\n for newlines": "添加值之间的分隔符，换行符为 \\n",
+  "Flow": "流",
+  "Run": "运行"
+}

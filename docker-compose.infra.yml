@@ -1,0 +1,32 @@
+version: '3.0'
+services:
+  postgres:
+    image: 'postgres:14.4'
+    container_name: postgres
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - '5432:5432'
+    environment:
+      - 'POSTGRES_DB=${AP_POSTGRES_DATABASE}'
+      - 'POSTGRES_PASSWORD=${AP_POSTGRES_PASSWORD}'
+      - 'POSTGRES_USER=${AP_POSTGRES_USERNAME}'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - activepieces
+  redis:
+    image: 'redis:7.0.7'
+    container_name: redis
+    ports:
+      - '6379:6379'
+    restart: unless-stopped
+    volumes:
+      - 'redis_data:/data'
+    networks:
+      - activepieces
+volumes:
+  postgres_data:
+  redis_data:
+networks:
+  activepieces:

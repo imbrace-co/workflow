@@ -1,0 +1,23 @@
+{
+  "AI agents": "AI agents",
+  "Return response data from AI assistant": "Return response data from AI assistant",
+  "Chat Completion": "Chat Completion",
+  "Return the response data from AI assistant based on the instruction and setup": "Return the response data from AI assistant based on the instruction and setup",
+  "Assistant Name": "Assistant Name",
+  "Model": "Model",
+  "Customized Prompt": "Customized Prompt",
+  "Prompt": "Prompt",
+  "Prompt to send if custom prompt enabled": "Prompt to send if custom prompt enabled",
+  "Custom prompt to send to the AI assistant": "Custom prompt to send to the AI assistant",
+  "Allow Voice Message": "Allow Voice Message",
+  "Vendor": "Vendor",
+  "Language Code": "Language Code",
+  "English (US)": "English (US)",
+  "Chinese (China)": "Chinese (China)",
+  "Chinese (Taiwan)": "Chinese (Taiwan)",
+  "Testing Organization ID": "Testing Organization ID",
+  "Organization ID": "Organization ID",
+  "Auto-resolved organization ID": "Auto-resolved organization ID",
+  "Advanced Flow AI Assistant": "Advanced Flow AI Assistant",
+  "Standard Conversation AI Assistant": "Standard Conversation AI Assistant"
+}

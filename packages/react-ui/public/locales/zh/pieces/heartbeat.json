@@ -1,0 +1,17 @@
+{
+  "Monitoring and alerting made easy": "Monitoring and alerting made easy",
+  "\n  1. Login to your Heartbeat account\n  2. On the bottom-left, click on 'Admin Settings'\n  3. On the left panel, click on 'API Keys'\n  5. Click on 'Create API Key'\n  6. On the popup form, Enter the 'Label' to name the Key\n  7. Copy the API key and paste it below.\n": "\n  1. Login to your Heartbeat account\n  2. On the bottom-left, click on 'Admin Settings'\n  3. On the left panel, click on 'API Keys'\n  5. Click on 'Create API Key'\n  6. On the popup form, Enter the 'Label' to name the Key\n  7. Copy the API key and paste it below.\n",
+  "Create a new user in a Heartbeat community": "Create a new user in a Heartbeat community",
+  "Groups": "Groups",
+  "Profile Picture": "Profile Picture",
+  "Bio": "Bio",
+  "Create introduction thread": "Create introduction thread",
+  "The user's full name": "The user's full name",
+  "The user's email. Must be unique to the community": "The user's email. Must be unique to the community",
+  "The role the user should have": "The role the user should have",
+  "A list of the ids of the groups that the user should belong to": "A list of the ids of the groups that the user should belong to.",
+  "A Data URI scheme in the JPG, GIF, or PNG format. Ensure you use the proper content type (image/jpeg, image/png, image/gif) that matches the image data being provided": "A Data URI scheme in the JPG, GIF, or PNG format. Ensure you use the proper content type (image/jpeg, image/png, image/gif) that matches the image data being provided",
+  "The user's bio": "The user's bio",
+  "The user's status": "The user's status",
+  "If true and a value for bio is provided, an introduction thread for the user will be created in the channel designated for introductions in your community settings": "If true and a value for bio is provided, an introduction thread for the user will be created in the channel designated for introductions in your community settings."
+}

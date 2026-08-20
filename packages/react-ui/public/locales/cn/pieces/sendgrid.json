@@ -1,0 +1,8 @@
+{
+  "API key acquired from your SendGrid settings": "API key acquired from your SendGrid settings",
+  "Send Dynamic Template": "Send Dynamic Template",
+  "Send an email using a dynamic template": "Send an email using a dynamic template",
+  "Sender email, must be on your SendGrid": "Sender email, must be on your SendGrid",
+  "Dynamic template id": "Dynamic template id",
+  "Dynamic template data": "Dynamic template data"
+}

@@ -1,0 +1,16 @@
+.boardDesc {
+    position: relative;
+   
+}
+.boardLimit{
+    position: absolute;
+    top: 3px;
+    right: 0;
+    font-size: 12px;
+}
+.boardDescOverLimit {
+    color: #e53c3c;
+}
+.boardDescIsLimit {
+    color: #828282;
+}

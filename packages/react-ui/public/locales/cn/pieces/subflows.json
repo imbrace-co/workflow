@@ -1,0 +1,9 @@
+{
+  "Trigger and call another sub flow": "Trigger and call another sub flow.",
+  "Flow": "流",
+  "The flow to execute": "The flow to execute",
+  "Callable Flow": "Callable Flow",
+  "Waiting to be triggered from another flow": "Waiting to be triggered from another flow",
+  "Sample Data": "Sample Data",
+  "The schema to be passed to the flow": "The schema to be passed to the flow"
+}

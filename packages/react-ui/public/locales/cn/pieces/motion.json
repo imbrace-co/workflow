@@ -1,0 +1,14 @@
+{
+  "You can obtain API key from [API Settings](https://app.usemotion.com/web/settings/api)": "You can obtain API key from [API Settings](https://app.usemotion.com/web/settings/api).",
+  "Current Workspace": "Current Workspace",
+  "Target Workspace": "Target Workspace",
+  "Include All Statuses": "Include All Statuses",
+  "Duration in minutes": "Duration in minutes.",
+  "The names of the labels to be added to the task": "The names of the labels to be added to the task",
+  "ISO 8601 Due date on the project": "ISO 8601 Due date on the project",
+  "ASAP": "ASAP",
+  "HIGH": "HIGH",
+  "MEDIUM": "MEDIUM",
+  "LOW": "LOW",
+  "Task Created": "Task Created"
+}

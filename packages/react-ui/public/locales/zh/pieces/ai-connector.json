@@ -1,0 +1,23 @@
+{
+  "AI agents": "AI 助手",
+  "Return response data from AI assistant": "從 AI 助手返回響應數據",
+  "Chat Completion": "對話補全",
+  "Return the response data from AI assistant based on the instruction and setup": "根據指令和設置返回 AI 助手的響應數據",
+  "Assistant Name": "助手名稱",
+  "Model": "模型",
+  "Customized Prompt": "自定義提示語",
+  "Prompt": "提示語",
+  "Prompt to send if custom prompt enabled": "如果啟用自定義提示語，將發送此提示語",
+  "Custom prompt to send to the AI assistant": "發送給 AI 助手的自定義提示語",
+  "Allow Voice Message": "允許語音消息",
+  "Vendor": "供應商",
+  "Language Code": "語言代碼",
+  "English (US)": "英語 (美國)",
+  "Chinese (China)": "中文 (中國)",
+  "Chinese (Taiwan)": "中文 (台灣)",
+  "Testing Organization ID": "測試組織 ID",
+  "Organization ID": "組織 ID",
+  "Auto-resolved organization ID": "自動解析的組織 ID",
+  "Advanced Flow AI Assistant": "高級流程 AI 助手",
+  "Standard Conversation AI Assistant": "標準對話 AI 助手"
+}

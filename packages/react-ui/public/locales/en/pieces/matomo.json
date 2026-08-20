@@ -1,0 +1,14 @@
+{
+  "Matomo Domain": "Matomo Domain",
+  "Token Auth": "Token Auth",
+  "The domain of your Matomo account: https://matomo.example.com": "The domain of your Matomo account: https://matomo.example.com",
+  "The Token Auth key from your Matomo account": "The Token Auth key from your Matomo account",
+  "The site ID that will be associated to this connection. Site IDs can be found on the main Websites page": "The site ID that will be associated to this connection. Site IDs can be found on the main Websites page.",
+  "\nAuthenticate with Matomo.\n\nYour Matomo domain is the URL of your Matomo account, e.g. https://matomo.example.com\n\nYour Token Auth key can be found in your Matomo account under Settings > API.\n\nYour Site ID can be found in your Matomo account under Administration > Websites.\n": "\nAuthenticate with Matomo.\n\nYour Matomo domain is the URL of your Matomo account, e.g. https://matomo.example.com\n\nYour Token Auth key can be found in your Matomo account under Settings > API.\n\nYour Site ID can be found in your Matomo account under Administration > Websites.\n",
+  "Add Annotation": "Add Annotation",
+  "Add an annotation to a Matomo site": "Add an annotation to a Matomo site",
+  "Starred": "Starred",
+  "The note to add": "The note to add",
+  "The date to add the note to. Format: YYYY-MM-DD": "The date to add the note to. Format: YYYY-MM-DD",
+  "Whether or not the note should be starred": "Whether or not the note should be starred"
+}

@@ -1,0 +1,18 @@
+{
+  "Makes a GraphQL request.": "發出 GraphQL 請求。",
+  "Send Request": "傳送請求",
+  "URL": "URL",
+  "Headers": "請求標頭",
+  "Query params": "查詢參數",
+  "Query": "查詢",
+  "Variables": "變數",
+  "Use Proxy": "使用代理",
+  "Use a proxy for this request": "為此請求使用代理",
+  "Proxy Settings": "代理設定",
+  "Proxy Host": "代理主機",
+  "Proxy Port": "代理埠",
+  "Proxy Username": "代理使用者名稱",
+  "Proxy Password": "代理密碼",
+  "Timeout(in seconds)": "逾時（秒）",
+  "No Error on Failure": "失敗時不糾錯"
+}

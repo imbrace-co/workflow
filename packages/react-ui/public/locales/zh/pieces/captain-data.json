@@ -1,0 +1,13 @@
+{
+  "Project ID": "專案 ID",
+  "Launch a workflow": "Launch a workflow",
+  "Get job results": "Get job results",
+  "Get all results for a specific job": "Get all results for a specific job",
+  "Workflow": "Workflow",
+  "Job name": "Job name",
+  "Inputs": "Inputs",
+  "Steps": "Steps",
+  "Delay (seconds)": "Delay (seconds)",
+  "Job": "Job",
+  "Inputs are the starting point of your workflow": "Inputs are the starting point of your workflow."
+}

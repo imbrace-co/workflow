@@ -1,0 +1,17 @@
+{
+  "Connect to your hosted MCP Server using any MCP client to communicate with tools": "使用任何 MCP 客戶端連接到您託管的 MCP 服務器與工具通信",
+  "Reply to MCP Client": "Reply to MCP Client",
+  "Return a response to the MCP client that called the tool": "Return a response to the MCP client that called the tool.",
+  "Response": "答覆",
+  "Flow Execution": "流執行",
+  "**Important**: Make sure your MCP trigger has (Wait for Response) turned on": "**Important**: Make sure your MCP trigger has (Wait for Response) turned on.",
+  "Choose Simple for key-value or Advanced for JSON": "Choose Simple for key-value or Advanced for JSON.",
+  "Respond and Continue": "響應並繼續",
+  "MCP Tool": "MCP Tool",
+  "Creates a tool that MCP clients can call to execute this flow": "Creates a tool that MCP clients can call to execute this flow",
+  "Wait for Response": "Wait for Response",
+  "Used to call this tool from MCP clients like Claude Desktop, Cursor, or Windsurf": "Used to call this tool from MCP clients like Claude Desktop, Cursor, or Windsurf",
+  "Used to describe what this tool does and when to use it": "Used to describe what this tool does and when to use it",
+  "Define the input parameters that this tool accepts. Parameters will be shown to users when calling the tool": "Define the input parameters that this tool accepts. Parameters will be shown to users when calling the tool.",
+  "Keep the MCP client waiting until it receives a response via the Reply to MCP Client action": "Keep the MCP client waiting until it receives a response via the Reply to MCP Client action"
+}
