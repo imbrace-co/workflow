@@ -330,7 +330,7 @@ Detailed documentation is available in the `docs/developers/` folder:
 
 ### Additional Resources
 
-- [Builtin Sync Guide](docs/BUILTIN_SYNC_GUIDE.md) - Detailed builtin piece sync process
+- [BUILTIN Mode Build Script](scripts/README-BUILTIN-MODE.md) - Building pieces for `AP_PIECES_SOURCE=BUILTIN`
 
 ---
 
