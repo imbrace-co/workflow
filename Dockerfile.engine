@@ -11,6 +11,7 @@ RUN apt-get update && \
         python3 \
         g++ \
         build-essential \
+        pkg-config \
         git \
         procps \
         curl \
@@ -28,6 +29,13 @@ ENV PATH="${BUN_INSTALL}/bin:${PATH}"
 
 # Set environment variables
 ENV NX_DAEMON=false
+
+# redis-memory-server only backs REDIS_TYPE=MEMORY, used for local dev and
+# tests; deployments run STANDALONE. Its postinstall compiles Redis plus four
+# modules from source, which needs a toolchain this image does not carry.
+# Skip it via the package's own opt-out — narrower than --ignore-scripts,
+# which would also skip the native builds (bcrypt, better-sqlite3, ssh2).
+ENV REDISMS_DISABLE_POSTINSTALL=1
 ENV NX_PLUGIN_NO_TIMEOUTS=true
 ENV ENGINE_PORT=3001
 ENV AP_EXECUTION_MODE=UNSANDBOXED
