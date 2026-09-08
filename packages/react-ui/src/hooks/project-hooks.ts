@@ -15,7 +15,7 @@ import { useToast } from '@/components/ui/use-toast';
 import { api } from '@/lib/api';
 import { authenticationSession } from '@/lib/authentication-session';
 import { dashboardAutoLogin } from '@/lib/dashboard-auto-login';
-import { UpdateProjectPlatformRequest } from '@activepieces/ee-shared';
+import { UpdateProjectPlatformRequest } from '@activepieces/shared';
 import {
   ApEdition,
   ApFlagId,

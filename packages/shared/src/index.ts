@@ -1,4 +1,6 @@
 export * from './lib/application-events'
+export * from './lib/authentication/dto/auth-requests'
+export * from './lib/project/platform-project-requests'
 export * from './lib/git-sync'
 export * from './lib/otp/otp-type'
 export * from './lib/project-role/access-control-list'

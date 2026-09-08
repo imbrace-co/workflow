@@ -1,5 +1,5 @@
 import { api } from '@/lib/api';
-import { ManagedAuthnRequestBody } from '@activepieces/ee-shared';
+import { ManagedAuthnRequestBody } from '@activepieces/shared';
 import { AuthenticationResponse } from '@activepieces/shared';
 
 export const managedAuthApi = {
