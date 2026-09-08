@@ -55,44 +55,101 @@ export type ListAlertsParams = { projectId: string, limit?: number, cursor?: str
 export type CustomDomain = { id: string, domain: string, platformId: string, status: CustomDomainStatus, [k: string]: unknown }
 export type AddDomainRequest = { domain: string }
 
-export type SigningKey = { id: string, displayName: string, publicKey: string, [k: string]: unknown }
+type BaseFields = { id: string, created: string, updated: string }
+
+export type SigningKey = BaseFields & { displayName: string, publicKey: string, generatedBy?: string, algorithm?: string, [k: string]: unknown }
 export type SigningKeyId = string
-export type AddSigningKeyRequestBody = { displayName: string }
+export const AddSigningKeyRequestBody = Type.Object({
+    displayName: Type.String(),
+})
+export type AddSigningKeyRequestBody = Static<typeof AddSigningKeyRequestBody>
 export type AddSigningKeyResponse = SigningKey & { privateKey: string }
 
-export type ApiKeyResponseWithValue = { id: string, displayName: string, value: string, [k: string]: unknown }
-export type ApiKeyResponseWithoutValue = { id: string, displayName: string, [k: string]: unknown }
+export type ApiKeyResponseWithValue = BaseFields & { displayName: string, value: string, [k: string]: unknown }
+export type ApiKeyResponseWithoutValue = BaseFields & { displayName: string, truncatedValue?: string, lastUsedAt?: string, [k: string]: unknown }
 export type CreateApiKeyRequest = { displayName: string }
 
 export type OAuthApp = { id: string, pieceName: string, clientId: string, [k: string]: unknown }
 export type UpsertOAuth2AppRequest = { pieceName: string, clientId: string, clientSecret: string }
 export type ListOAuth2AppRequest = { limit?: number, cursor?: string }
 
-export type GitRepo = { id: string, remoteUrl: string, branch: string, branchType: GitBranchType, [k: string]: unknown }
-export type ConfigureRepoRequest = { remoteUrl: string, branch: string, slug: string, branchType: GitBranchType }
-export type PushGitRepoRequest = { type: string, commitMessage: string, [k: string]: unknown }
-export type PushFlowsGitRepoRequest = PushGitRepoRequest
-export type PushTablesGitRepoRequest = PushGitRepoRequest
-export type PushEverythingGitRepoRequest = { commitMessage: string }
+export type GitRepo = { id: string, remoteUrl: string, branch: string, branchType: GitBranchType, slug?: string, sshPrivateKey?: string, [k: string]: unknown }
+
+// These are used both as types and as typebox schemas (form resolvers).
+export const ConfigureRepoRequest = Type.Object({
+    projectId: Type.Optional(Type.String()),
+    remoteUrl: Type.String(),
+    branch: Type.String(),
+    slug: Type.String(),
+    branchType: Type.Enum(GitBranchType),
+    sshPrivateKey: Type.Optional(Type.String()),
+})
+export type ConfigureRepoRequest = Static<typeof ConfigureRepoRequest>
+
+export const PushFlowsGitRepoRequest = Type.Object({
+    type: Type.String(),
+    commitMessage: Type.String(),
+    flowIds: Type.Optional(Type.Array(Type.String())),
+    externalFlowIds: Type.Optional(Type.Array(Type.String())),
+    tableIds: Type.Optional(Type.Array(Type.String())),
+    externalTableIds: Type.Optional(Type.Array(Type.String())),
+})
+export type PushFlowsGitRepoRequest = Static<typeof PushFlowsGitRepoRequest>
+
+export const PushTablesGitRepoRequest = Type.Object({
+    type: Type.String(),
+    commitMessage: Type.String(),
+    tableIds: Type.Optional(Type.Array(Type.String())),
+    externalTableIds: Type.Optional(Type.Array(Type.String())),
+})
+export type PushTablesGitRepoRequest = Static<typeof PushTablesGitRepoRequest>
+
+export const PushEverythingGitRepoRequest = Type.Object({
+    commitMessage: Type.String(),
+})
+export type PushEverythingGitRepoRequest = Static<typeof PushEverythingGitRepoRequest>
+
+export type PushGitRepoRequest = PushFlowsGitRepoRequest
 
 export type ProjectMemberWithUser = {
     id: string
     projectRole: { name: string, [k: string]: unknown }
+    project: { id: string, displayName: string, [k: string]: unknown }
     user: { id: string, firstName: string, lastName: string, email: string }
     [k: string]: unknown
 }
 export type ListProjectMembersRequestQuery = { projectId: string, limit?: number, cursor?: string }
 export type UpdateProjectMemberRoleRequestBody = { role: string }
 
-export type CreateFlowTemplateRequest = { template: unknown, [k: string]: unknown }
+export type CreateFlowTemplateRequest = {
+    template: { displayName?: string, description?: string, tags?: string[], [k: string]: unknown }
+    displayName?: string
+    description?: string
+    blogUrl?: string
+    tags?: string[]
+    [k: string]: unknown
+}
 
-export type ApplicationEvent = { action: string, data: unknown, [k: string]: unknown }
+export type ApplicationEvent = {
+    id: string
+    created: string
+    updated: string
+    action: string
+    data: { project?: { displayName?: string }, [k: string]: unknown }
+    platformId: string
+    projectId?: string
+    projectDisplayName?: string
+    userId?: string
+    userEmail?: string
+    ip?: string
+}
 export type ListAuditEventsRequest = { limit?: number, cursor?: string, [k: string]: unknown }
 
 export type CreateSubscriptionParams = { [k: string]: unknown }
 export type SetAiCreditsOverageLimitParams = { limit: number }
-export type ToggleAiCreditsOverageEnabledParams = { enabled: boolean }
+export type ToggleAiCreditsOverageEnabledParams = { enabled?: boolean, state?: unknown, [k: string]: unknown }
 export type UpdateActiveFlowsAddonParams = { [k: string]: unknown }
+export type CreateFlowTemplateRequestValue = { template: { displayName?: string, description?: string, tags?: string[], [k: string]: unknown } }
 
 // typebox schema helper (rarely used at runtime in community)
 export const AlertChannelSchema = Type.Enum(AlertChannel)
