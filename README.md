@@ -62,7 +62,7 @@ Get up and running in minutes:
    - **Option 1**: Open [http://localhost:4200](http://localhost:4200) and login with:
      - Email: `dev@ap.com`
      - Password: `12345678`
-   - **Option 2**: Use direct URL with token from Imbrace webapp:
+   - **Option 2**: Use direct URL with token from iMBrace webapp:
      ```
      http://localhost:4200/projects/?token=<YOUR_TOKEN>&organizationId=<YOUR_ORG_ID>
      ```
