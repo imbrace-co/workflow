@@ -3,13 +3,11 @@ import { FastifyRequest } from 'fastify'
 import { AccessTokenAuthnHandler } from './authn/access-token-authn-handler'
 import { AnonymousAuthnHandler } from './authn/anonymous-authn-handler'
 import { DashboardAccessTokenAuthnHandler } from './authn/dashboard-access-token-authn-handler'
-import { PlatformApiKeyAuthnHandler } from './authn/platform-api-key-authn-handler'
 import { PrincipalTypeAuthzHandler } from './authz/principal-type-authz-handler'
 import { ProjectAuthzHandler } from './authz/project-authz-handler'
 
 const AUTHN_HANDLERS = [
     new DashboardAccessTokenAuthnHandler(), // Dashboard access token for API requests
-    new PlatformApiKeyAuthnHandler(),
     new AccessTokenAuthnHandler(),
     new AnonymousAuthnHandler(),
 ]

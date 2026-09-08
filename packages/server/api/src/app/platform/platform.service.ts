@@ -17,8 +17,8 @@ import {
     UserStatus,
 } from '@activepieces/shared'
 import { repoFactory } from '../core/db/repo-factory'
-import { platformPlanService } from '../ee/platform/platform-plan/platform-plan.service'
-import { platformUsageService } from '../ee/platform/platform-usage-service'
+import { platformPlanService } from './platform-plan/platform-plan.service'
+import { platformUsageService } from './platform-usage-service'
 import { defaultTheme } from '../flags/theme'
 import { system } from '../helper/system/system'
 import { projectService } from '../project/project-service'

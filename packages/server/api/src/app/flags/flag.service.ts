@@ -3,7 +3,7 @@ import { ApEdition, ApFlagId, ExecutionMode, Flag, isNil } from '@activepieces/s
 import { In } from 'typeorm'
 import { aiProviderService } from '../ai/ai-provider-service'
 import { repoFactory } from '../core/db/repo-factory'
-import { federatedAuthnService } from '../ee/authentication/federated-authn/federated-authn-service'
+import { federatedAuthnService } from './federated-authn-service'
 import { domainHelper } from '../helper/domain-helper'
 import { system } from '../helper/system/system'
 import { FlagEntity } from './flag.entity'
