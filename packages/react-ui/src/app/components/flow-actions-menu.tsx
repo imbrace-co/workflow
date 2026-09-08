@@ -33,7 +33,7 @@ import { platformHooks } from '@/hooks/platform-hooks';
 import { authenticationSession } from '@/lib/authentication-session';
 import { toast } from '@/components/ui/use-toast';
 import { useNewWindow } from '@/lib/navigation-utils';
-import { GitBranchType } from '@activepieces/ee-shared';
+import { GitBranchType } from '@/lib/ee-types';
 import {
   FlowOperationType,
   FlowVersion,

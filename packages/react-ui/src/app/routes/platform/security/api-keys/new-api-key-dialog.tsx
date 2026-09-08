@@ -24,7 +24,7 @@ import {
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { apiKeyApi } from '@/features/platform-admin/lib/api-key-api';
-import { ApiKeyResponseWithValue } from '@activepieces/ee-shared';
+import { ApiKeyResponseWithValue } from '@/lib/ee-types';
 
 type NewApiKeyDialogProps = {
   children: React.ReactNode;

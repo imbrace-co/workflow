@@ -25,7 +25,7 @@ import {
   NoProjectSelected,
   isConnectionNameUnique,
 } from './utils';
-import { ProjectMemberWithUser } from '@activepieces/ee-shared';
+import { ProjectMemberWithUser } from '@/lib/ee-types';
 
 type UseReplaceConnectionsProps = {
   setDialogOpen: (isOpen: boolean) => void;

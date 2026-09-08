@@ -3,7 +3,7 @@ import {
   Alert,
   CreateAlertParams,
   ListAlertsParams,
-} from '@activepieces/ee-shared';
+} from '@/lib/ee-types';
 import { SeekPage } from '@activepieces/shared';
 
 export const alertsApi = {

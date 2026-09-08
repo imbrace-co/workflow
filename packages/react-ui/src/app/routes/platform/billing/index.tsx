@@ -17,7 +17,7 @@ import {
 } from '@/features/billing/lib/billing-hooks';
 import { flagsHooks } from '@/hooks/flags-hooks';
 import { platformHooks } from '@/hooks/platform-hooks';
-import { ApSubscriptionStatus } from '@activepieces/ee-shared';
+import { ApSubscriptionStatus } from '@/lib/ee-types';
 import { ApEdition, ApFlagId, isNil, PlanName } from '@activepieces/shared';
 
 export default function Billing() {

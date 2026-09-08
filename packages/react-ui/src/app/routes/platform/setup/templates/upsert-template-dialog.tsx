@@ -20,7 +20,7 @@ import { Label } from '@/components/ui/label';
 import { TagInput } from '@/components/ui/tag-input';
 import { templatesApi } from '@/features/templates/lib/templates-api';
 import { api } from '@/lib/api';
-import { CreateFlowTemplateRequest } from '@activepieces/ee-shared';
+import { CreateFlowTemplateRequest } from '@/lib/ee-types';
 import {
   FlowTemplate,
   FlowVersionTemplate,

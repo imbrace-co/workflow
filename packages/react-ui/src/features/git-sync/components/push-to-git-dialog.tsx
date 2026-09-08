@@ -30,7 +30,7 @@ import {
   PushGitRepoRequest,
   PushFlowsGitRepoRequest,
   PushTablesGitRepoRequest,
-} from '@activepieces/ee-shared';
+} from '@/lib/ee-types';
 import {
   assertNotNullOrUndefined,
   PopulatedFlow,

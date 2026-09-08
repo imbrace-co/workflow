@@ -21,7 +21,7 @@ import { signingKeyApi } from '@/features/platform-admin/lib/signing-key-api';
 import {
   AddSigningKeyRequestBody,
   AddSigningKeyResponse,
-} from '@activepieces/ee-shared';
+} from '@/lib/ee-types';
 
 type NewSigningKeyDialogProps = {
   children: React.ReactNode;

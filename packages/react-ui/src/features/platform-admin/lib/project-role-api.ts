@@ -1,5 +1,5 @@
 import { api } from '@/lib/api';
-import { ProjectMemberWithUser } from '@activepieces/ee-shared';
+import { ProjectMemberWithUser } from '@/lib/ee-types';
 import {
   CreateProjectRoleRequestBody,
   UpdateProjectRoleRequestBody,

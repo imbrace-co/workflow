@@ -36,7 +36,7 @@ import {
   ApplicationEvent,
   ApplicationEventName,
   summarizeApplicationEvent,
-} from '@activepieces/ee-shared';
+} from '@/lib/ee-types';
 import { isNil } from '@activepieces/shared';
 
 export default function AuditLogsPage() {

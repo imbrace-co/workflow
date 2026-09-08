@@ -2,7 +2,7 @@ import { useMutation, useQuery } from '@tanstack/react-query';
 import { t } from 'i18next';
 
 import { toast } from '@/components/ui/use-toast';
-import { UpsertOAuth2AppRequest } from '@activepieces/ee-shared';
+import { UpsertOAuth2AppRequest } from '@/lib/ee-types';
 import { ApEdition, AppConnectionType } from '@activepieces/shared';
 
 import { oauthAppsApi } from './api/oauth-apps';

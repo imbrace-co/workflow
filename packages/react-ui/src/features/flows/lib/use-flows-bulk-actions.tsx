@@ -15,7 +15,7 @@ import { gitSyncHooks } from '@/features/git-sync/lib/git-sync-hooks';
 import { useAuthorization } from '@/hooks/authorization-hooks';
 import { platformHooks } from '@/hooks/platform-hooks';
 import { authenticationSession } from '@/lib/authentication-session';
-import { GitBranchType } from '@activepieces/ee-shared';
+import { GitBranchType } from '@/lib/ee-types';
 import {
   FlowVersionState,
   Permission,

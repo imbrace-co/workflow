@@ -8,7 +8,7 @@ import {
   SetAiCreditsOverageLimitParams,
   UpdateActiveFlowsAddonParams,
   CreateSubscriptionParams,
-} from '@activepieces/ee-shared';
+} from '@/lib/ee-types';
 import { PlatformPlan, PlatformBillingInformation } from '@activepieces/shared';
 
 export const platformBillingApi = {

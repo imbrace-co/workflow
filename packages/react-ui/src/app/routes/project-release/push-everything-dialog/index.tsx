@@ -37,7 +37,7 @@ import {
   GitPushOperationType,
   PushEverythingGitRepoRequest,
   PushGitRepoRequest,
-} from '@activepieces/ee-shared';
+} from '@/lib/ee-types';
 import { assertNotNullOrUndefined } from '@activepieces/shared';
 
 type PushEverythingDialogProps = {

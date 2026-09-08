@@ -10,7 +10,7 @@ import {
   SetAiCreditsOverageLimitParams,
   UpdateActiveFlowsAddonParams,
   CreateSubscriptionParams,
-} from '@activepieces/ee-shared';
+} from '@/lib/ee-types';
 import { ApErrorParams, ErrorCode } from '@activepieces/shared';
 
 import { platformBillingApi } from './api';
