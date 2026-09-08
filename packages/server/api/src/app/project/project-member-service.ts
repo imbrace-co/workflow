@@ -3,11 +3,13 @@ import { FastifyBaseLogger } from 'fastify'
 
 // Community edition: project members (multi-user projects) are an enterprise
 // feature. Every project has a single owner, so there are no additional members.
-const EMPTY_PAGE: SeekPage<never> = { data: [], next: null, previous: null }
+type ProjectMemberWithUser = {
+    user: { firstName: string, lastName: string, email: string }
+}
 
 export const projectMemberService = (_log: FastifyBaseLogger) => ({
-    async list(_params: unknown): Promise<SeekPage<never>> {
-        return EMPTY_PAGE
+    async list(_params: unknown): Promise<SeekPage<ProjectMemberWithUser>> {
+        return { data: [], next: null, previous: null }
     },
     async getIdsOfProjects(_params: { platformId: string, userId: string }): Promise<string[]> {
         return []

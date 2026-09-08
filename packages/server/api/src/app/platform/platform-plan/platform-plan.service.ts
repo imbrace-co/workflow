@@ -35,7 +35,7 @@ export const platformPlanService = (_log: FastifyBaseLogger) => ({
     async getNextBillingAmount(): Promise<number> {
         return 0
     },
-    async isCloudNonEnterprisePlan(): Promise<boolean> {
+    async isCloudNonEnterprisePlan(_platformId?: string): Promise<boolean> {
         return false
     },
     checkActiveFlowsExceededLimit: async (_platformId: string, _metric: PlatformUsageMetric): Promise<void> => {

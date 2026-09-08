@@ -159,16 +159,12 @@ export const setupApp = async (app: FastifyInstance): Promise<FastifyInstance> =
     await pieceSyncService(app.log).setup()
     await pieceMetadataService(app.log).setup()
     await app.register(platformUserModule)
-    await app.register(alertsModule)
     await app.register(invitationModule)
     await app.register(workerModule)
     await app.register(aiProviderModule)
-    await app.register(licenseKeysModule)
     await app.register(tablesModule)
-    await app.register(userModule)
     await app.register(todoModule)
     await app.register(todoActivityModule)
-    await app.register(solutionsModule)
     systemJobHandlers.registerJobHandler(SystemJobName.DELETE_FLOW, (data) => flowService(app.log).backgroundDeleteHandler(data))
 
     app.get(
