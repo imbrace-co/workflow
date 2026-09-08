@@ -1,14 +1,50 @@
-# AP Workflow - Developer Guide
+# iMBrace Workflow
 
-A workflow automation platform built on Activepieces, enabling developers to create, manage, and deploy workflow pieces with builtin integration support.
+The workflow-automation engine of the [iMBrace](https://github.com/imbrace-co/iMBrace)
+platform — build, manage and deploy stateful DAG workflows that combine AI,
+deterministic logic, integrations and human approval.
+
+> **Based on [Activepieces](https://github.com/activepieces/activepieces)** (upstream **v0.72.4**).
+> See [About](#about--based-on-activepieces) for what iMBrace changed and the [License](#license).
 
 ## Table of Contents
 
+- [About / Based on Activepieces](#about--based-on-activepieces)
 - [Quick Start](#quick-start)
 - [Local Development Setup](#local-development-setup)
 - [Building Pieces](#building-pieces)
 - [Builtin Pieces Sync](#builtin-pieces-sync)
 - [Documentation](#documentation)
+- [Contributing](#contributing)
+- [License](#license)
+
+---
+
+## About / Based on Activepieces
+
+iMBrace Workflow is a fork of **[Activepieces](https://github.com/activepieces/activepieces)**,
+tracking upstream **v0.72.4**. The enterprise-only code (`packages/ee/`) has been
+removed, so this repository ships the MIT-licensed core only.
+
+### What iMBrace changed
+
+- **iMBrace ecosystem integration** — replaces Activepieces auth with iMBrace
+  auth (auto-login, sidebar hidden); the organization is resolved from the
+  account context instead of a selector; all API calls are routed through the
+  iMBrace **app-gateway** (migrated off the legacy backend); the dashboard
+  validates the `x-organization-id` header.
+- **Custom pieces** (the largest change) — iMBrace-built pieces under
+  `packages/pieces/community/`: `automate-data-board`, `document-ai`,
+  `ask-a-question`, `record-linker`, `assign-team-and-end-flow`, `end-flow`,
+  `clip-and-cache`, `prep-and-send`, `databoard`, plus an AI connector (v2 with
+  custom instructions, suggestions and a document provider).
+- **Kafka integration** — Kafka trigger, CRM topic, offset commits, retry and
+  rebalance handling, SSL config.
+- **Internationalization** — Chinese (zh/cn) translations for pieces and the
+  right panel.
+- **Infrastructure** — split `Dockerfile.backend` / `Dockerfile.engine` /
+  `Dockerfile.frontend`, production/staging nginx configs, CI/CD, DB
+  migration/init and worker-scaling docs.
 
 ---
 
@@ -26,8 +62,8 @@ Get up and running in minutes:
 
 1. **Clone the repository** (if you haven't already):
    ```bash
-   git clone <repository-url>
-   cd ap-workflow
+   git clone https://github.com/imbrace-co/workflow.git
+   cd workflow
    ```
 
 2. **Set up environment files**:
@@ -179,7 +215,7 @@ Building pieces is:
 - ✅ **Code-based**: Built with TypeScript for type safety and flexibility
 - ✅ **Fast iteration**: Hot reloading shows changes within seconds
 - ✅ **Open source**: Explore and contribute to existing pieces
-- ✅ **Community-driven**: Join Discord for support and collaboration
+- ✅ **Community-driven**: ask questions and collaborate in [GitHub Discussions](https://github.com/imbrace-co/workflow/discussions)
 - ✅ **AI-powered**: Universal AI SDK for multi-provider AI integration
 
 ### Getting Started with Pieces
@@ -336,21 +372,24 @@ Detailed documentation is available in the `docs/developers/` folder:
 
 ## Contributing
 
-We welcome contributions! Most pieces in this project are community-contributed.
+Contributions are welcome — most pieces in this project are community-contributed.
 
-**Contribution Perks:**
-- ✨ Contribute a piece and receive **+1,400 tasks/month** on [Activepieces Cloud](https://cloud.activepieces.com)
-- 🤝 Join our Discord community for fast support and collaboration
-
----
-
-## Support
-
-For questions, issues, or support:
-- 💬 Join our **Discord community** for the fastest support
-- 🐛 Report issues on GitHub
-- 📖 Check the [documentation](docs/developers/)
+- 🐛 Open issues and pull requests on
+  [github.com/imbrace-co/workflow](https://github.com/imbrace-co/workflow)
+- 💬 Ask questions and collaborate in
+  [GitHub Discussions](https://github.com/imbrace-co/workflow/discussions)
 
 ---
 
-**Happy coding! 🚀**
+## License
+
+iMBrace Workflow is licensed under the **MIT License** — see [LICENSE](LICENSE).
+
+The enterprise-only code from the upstream project has been removed, so this
+repository contains only MIT-licensed code. As required by the MIT license, the
+original copyright notice of the upstream project (Activepieces Inc.) is
+retained in [LICENSE](LICENSE).
+
+---
+
+**Happy building! 🚀**
