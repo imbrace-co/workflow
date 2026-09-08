@@ -1,22 +1,18 @@
-import { AuthenticationEvent, ConnectionEvent, FlowCreatedEvent, FlowDeletedEvent, FlowRunEvent, FlowUpdatedEvent, FolderEvent, ProjectReleaseEvent, ProjectRoleEvent, SigningKeyEvent, SignUpEvent } from '@activepieces/ee-shared'
-import { Static, Type } from '@sinclair/typebox'
+import { ApplicationEventName } from '@activepieces/shared'
+import { Type } from '@sinclair/typebox'
 import { FastifyRequest } from 'fastify'
 import { hooksFactory } from '../hooks-factory'
 
-export const AuditEventParam = Type.Pick(Type.Union([
-    ConnectionEvent,
-    FlowCreatedEvent,
-    FlowDeletedEvent,
-    FlowUpdatedEvent,
-    AuthenticationEvent,
-    FolderEvent,
-    SignUpEvent,
-    SigningKeyEvent,
-    FlowRunEvent,
-    ProjectRoleEvent,
-    ProjectReleaseEvent,
-]), ['data', 'action'])
-export type AuditEventParam = Static<typeof AuditEventParam>
+// Community edition: audit logging is an enterprise feature. The event schema is
+// kept generic (action + free-form data) so audit hooks compile as no-ops.
+export const AuditEventParam = Type.Object({
+    action: Type.Enum(ApplicationEventName),
+    data: Type.Unknown(),
+})
+export type AuditEventParam = {
+    action: ApplicationEventName
+    data: unknown
+}
 
 
 export const eventsHooks = hooksFactory.create<ApplicationEventHooks>(() => {
