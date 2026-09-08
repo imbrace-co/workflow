@@ -4,7 +4,7 @@ import { Queue } from 'bullmq'
 import { BullMQOtel } from 'bullmq-otel'
 import { FastifyBaseLogger } from 'fastify'
 import { redisConnections } from '../../database/redis-connections'
-import { dedicatedWorkers } from '../../ee/platform/platform-plan/platform-dedicated-workers'
+import { dedicatedWorkers } from '../dedicated-workers'
 import { system } from '../../helper/system/system'
 import { AddJobParams, JobType } from './queue-manager'
 

@@ -17,7 +17,7 @@ import {
 import { StatusCodes } from 'http-status-codes'
 import { userIdentityRepository } from '../authentication/user-identity/user-identity-service'
 import { transaction } from '../core/db/transaction'
-import { platformMustBeOwnedByCurrentUser, platformToEditMustBeOwnedByCurrentUser } from '../ee/authentication/ee-authorization'
+import { platformMustBeOwnedByCurrentUser, platformToEditMustBeOwnedByCurrentUser } from '../core/security/authorization'
 import { smtpEmailSender } from '../ee/helper/email/email-sender/smtp-email-sender'
 import { platformPlanService } from '../ee/platform/platform-plan/platform-plan.service'
 import { stripeHelper } from '../ee/platform/platform-plan/stripe-helper'

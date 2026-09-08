@@ -1,5 +1,5 @@
 
-import { ApplicationEventName, GitPushOperationType } from '@activepieces/ee-shared'
+import { ApplicationEventName, GitPushOperationType } from '@activepieces/shared'
 import {
     ActivepiecesError,
     ApId,

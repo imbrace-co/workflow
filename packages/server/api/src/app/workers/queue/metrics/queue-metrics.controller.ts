@@ -1,7 +1,7 @@
 import { PrincipalType, QueueMetricsResponse, SERVICE_KEY_SECURITY_OPENAPI } from '@activepieces/shared'
 import { FastifyPluginAsyncTypebox } from '@fastify/type-provider-typebox'
 import { StatusCodes } from 'http-status-codes'
-import { platformMustBeOwnedByCurrentUser } from '../../../ee/authentication/ee-authorization'
+import { platformMustBeOwnedByCurrentUser } from '../../../core/security/authorization'
 import { queueMetricService } from './queue-metrics.service'
 
 export const queueMetricsController: FastifyPluginAsyncTypebox = async (app) => {

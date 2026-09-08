@@ -1,5 +1,5 @@
 import { AppSystemProp } from '@activepieces/server-shared'
-import { ApEdition, isNil } from '@activepieces/shared'
+import { isNil } from '@activepieces/shared'
 import {
     ArrayContains,
     DataSource,
@@ -13,24 +13,6 @@ import { AIProviderEntity } from '../ai/ai-provider-entity'
 import { AIUsageEntity } from '../ai/ai-usage-entity'
 import { AppConnectionEntity } from '../app-connection/app-connection.entity'
 import { UserIdentityEntity } from '../authentication/user-identity/user-identity-entity'
-import { AlertEntity } from '../ee/alerts/alerts-entity'
-import { PlatformAnalyticsReportEntity } from '../ee/analytics/platform-analytics-report.entity'
-import { ApiKeyEntity } from '../ee/api-keys/api-key-entity'
-import { AppCredentialEntity } from '../ee/app-credentials/app-credentials.entity'
-import { AppSumoEntity } from '../ee/appsumo/appsumo.entity'
-import { AuditEventEntity } from '../ee/audit-logs/audit-event-entity'
-import { OtpEntity } from '../ee/authentication/otp/otp-entity'
-import { ConnectionKeyEntity } from '../ee/connection-keys/connection-key.entity'
-import { CustomDomainEntity } from '../ee/custom-domains/custom-domain.entity'
-import { FlowTemplateEntity } from '../ee/flow-template/flow-template.entity'
-import { OAuthAppEntity } from '../ee/oauth-apps/oauth-app.entity'
-import { PlatformPlanEntity } from '../ee/platform/platform-plan/platform-plan.entity'
-import { ProjectMemberEntity } from '../ee/projects/project-members/project-member.entity'
-import { ProjectPlanEntity } from '../ee/projects/project-plan/project-plan.entity'
-import { GitRepoEntity } from '../ee/projects/project-release/git-sync/git-sync.entity'
-import { ProjectReleaseEntity } from '../ee/projects/project-release/project-release.entity'
-import { ProjectRoleEntity } from '../ee/projects/project-role/project-role.entity'
-import { SigningKeyEntity } from '../ee/signing-key/signing-key-entity'
 import { FileEntity } from '../file/file.entity'
 import { FlagEntity } from '../flags/flag.entity'
 import { FlowEntity } from '../flows/flow/flow.entity'
@@ -68,8 +50,6 @@ const databaseType = system.get(AppSystemProp.DB_TYPE)
 console.log(`Using database type: ${databaseType}`)
 
 function getEntities(): EntitySchema<unknown>[] {
-    const edition = system.getEdition()
-
     const entities: EntitySchema[] = [
         TriggerEventEntity,
         AppEventRoutingEntity,
@@ -87,11 +67,9 @@ function getEntities(): EntitySchema<unknown>[] {
         PlatformEntity,
         TagEntity,
         PieceTagEntity,
-        AlertEntity,
         UserInvitationEntity,
         WorkerMachineEntity,
         AIProviderEntity,
-        ProjectRoleEntity,
         TableEntity,
         FieldEntity,
         RecordEntity,
@@ -106,36 +84,6 @@ function getEntities(): EntitySchema<unknown>[] {
         AIUsageEntity,
         TriggerSourceEntity,
     ]
-
-    switch (edition) {
-        case ApEdition.CLOUD:
-        case ApEdition.ENTERPRISE:
-            entities.push(
-                ProjectMemberEntity,
-                ProjectPlanEntity,
-                CustomDomainEntity,
-                SigningKeyEntity,
-                OAuthAppEntity,
-                OtpEntity,
-                ApiKeyEntity,
-                FlowTemplateEntity,
-                GitRepoEntity,
-                AuditEventEntity,
-                ProjectReleaseEntity,
-                PlatformAnalyticsReportEntity,
-                // CLOUD
-                AppSumoEntity,
-                ConnectionKeyEntity,
-                AppCredentialEntity,
-                PlatformPlanEntity,
-           
-            )
-            break
-        case ApEdition.COMMUNITY:
-            break
-        default:
-            throw new Error(`Unsupported edition: ${edition}`)
-    }
 
     return entities
 }

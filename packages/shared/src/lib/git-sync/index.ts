@@ -1,0 +1,7 @@
+export enum GitPushOperationType {
+    PUSH_FLOW = 'PUSH_FLOW',
+    DELETE_FLOW = 'DELETE_FLOW',
+    PUSH_TABLE = 'PUSH_TABLE',
+    DELETE_TABLE = 'DELETE_TABLE',
+    PUSH_EVERYTHING = 'PUSH_EVERYTHING',
+}
