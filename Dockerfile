@@ -1,4 +1,4 @@
-FROM node:20.19-bullseye-slim AS base
+FROM node:20.19-bookworm-slim AS base
 
 # Set environment variables early for better layer caching
 ENV LANG=en_US.UTF-8 \

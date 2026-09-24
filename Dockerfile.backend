@@ -1,5 +1,5 @@
 ### STAGE 1: build (full toolchain, identical build steps to before) ###
-FROM node:20.19-bullseye-slim AS build
+FROM node:20.19-bookworm-slim AS build
 
 ARG NODE_MEMORY=4096
 
@@ -140,7 +140,7 @@ RUN mv dist/packages/server/api/node_modules /tmp/runtime-node-modules && \
     cp -r node_modules/@activepieces/. /tmp/runtime-node-modules/@activepieces/
 
 ### STAGE 2: run (slim) ###
-FROM node:20.19-bullseye-slim AS run
+FROM node:20.19-bookworm-slim AS run
 
 ARG NODE_MEMORY=4096
 

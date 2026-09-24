@@ -1,5 +1,5 @@
 # Multi-stage build for frontend service
-FROM node:20.19-bullseye-slim AS base
+FROM node:20.19-bookworm-slim AS base
 
 # Install system dependencies needed for the build process
 RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
