@@ -29,6 +29,8 @@ ENV PATH="${BUN_INSTALL}/bin:${PATH}"
 
 # Set environment variables
 ENV NX_DAEMON=false
+# Keep builds offline from Nx Cloud (nx.json carries an nxCloudId).
+ENV NX_NO_CLOUD=true
 
 # redis-memory-server only backs REDIS_TYPE=MEMORY, used for local dev and
 # tests; deployments run STANDALONE. Its postinstall compiles Redis plus four
