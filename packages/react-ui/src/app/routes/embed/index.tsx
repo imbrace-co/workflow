@@ -26,7 +26,7 @@ import {
   ActivepiecesVendorEventName,
   ActivepiecesVendorInit,
   ActivepiecesVendorRouteChanged,
-} from 'ee-embed-sdk';
+} from '@/lib/embed-sdk';
 
 const notifyVendorPostAuthentication = () => {
   const authenticationSuccessEvent: ActivepiecesClientAuthenticationSuccess = {

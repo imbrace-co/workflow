@@ -16,7 +16,7 @@ import {
   ActivepiecesClientShowConnectionIframe,
   ActivepiecesNewConnectionDialogClosed,
   NEW_CONNECTION_QUERY_PARAMS,
-} from 'ee-embed-sdk';
+} from '@/lib/embed-sdk';
 
 import { piecesHooks } from '../../../features/pieces/lib/pieces-hooks';
 import { CreateOrEditConnectionDialogContent } from '../../connections/create-edit-connection-dialog';
