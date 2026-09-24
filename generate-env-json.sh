@@ -74,51 +74,26 @@ echo "AP_CHAT_WIDGET: $AP_CHAT_WIDGET"
 echo "AP_GATEWAY_URL: $AP_GATEWAY_URL"
 echo "AP_IMBRACE_ADDING_CONNECTION_PIECES: $AP_IMBRACE_ADDING_CONNECTION_PIECES"
 
-# Generate env.json from .env file if it exists, otherwise from environment variables
-if [ -f "/app/.env" ]; then
-    echo "Converting /app/.env to JSON for /config endpoint..."
+# Generate env.json for the public /config endpoint.
+# /config is served to every browser, so it carries ONLY the keys the UI reads
+# (RuntimeConfig in packages/react-ui/src/lib/runtime-config.ts). Never dump
+# /app/.env here: it may hold backend secrets (JWT/encryption keys, DB passwords).
+json_escape() {
+    printf '%s' "$1" | sed 's/\\/\\\\/g; s/"/\\"/g'
+}
 
-    # Start JSON output
-    echo "{" > /usr/share/nginx/html/env.json
-
-    # Process .env file
-    first=1
-    while IFS='=' read -r key value || [ -n "$key" ]; do
-        # Skip empty lines and comments
-        case "$key" in
-            ''|'#'*) continue ;;
-        esac
-
-        # Trim spaces, newlines and strip quotes
-        key=$(echo "$key" | tr -d '\r\n' | sed 's/^[ \t]*//;s/[ \t]*$//')
-        value=$(echo "$value" | tr -d '\r\n' | sed 's/^[ \t]*//;s/[ \t]*$//;s/^"//;s/"$//')
-
-        # Check for non-empty key and value
-        if [ -n "$key" ] && [ -n "$value" ]; then
-            if [ $first -eq 1 ]; then
-                printf "\"%s\":\"%s\"" "$key" "$value" >> /usr/share/nginx/html/env.json
-                first=0
-            else
-                printf ",\"%s\":\"%s\"" "$key" "$value" >> /usr/share/nginx/html/env.json
-            fi
-        fi
-    done < /app/.env
-
-    # Add additional frontend properties if not in .env
-    printf ",\"AP_APP_TITLE\":\"%s\"" "$AP_APP_TITLE" >> /usr/share/nginx/html/env.json
-    printf ",\"AP_FAVICON_URL\":\"%s\"" "$AP_FAVICON_URL" >> /usr/share/nginx/html/env.json
-    printf ",\"AP_CHAT_WIDGET\":\"%s\"" "$AP_CHAT_WIDGET" >> /usr/share/nginx/html/env.json
-    printf ",\"AP_GATEWAY_URL\":\"%s\"" "$AP_GATEWAY_URL" >> /usr/share/nginx/html/env.json
-    printf ",\"AP_IMBRACE_ADDING_CONNECTION_PIECES\":\"%s\"" "$AP_IMBRACE_ADDING_CONNECTION_PIECES" >> /usr/share/nginx/html/env.json
-
-    # Close JSON
-    echo "}" >> /usr/share/nginx/html/env.json
-else
-    echo "No .env file found, generating config from environment variables..."
-    printf '{"AP_APP_TITLE":"%s","AP_FAVICON_URL":"%s","GATEWAY_URL":"%s","AP_FRONTEND_URL":"%s","AP_ENVIRONMENT":"%s","AP_CHAT_WIDGET":"%s","AP_GATEWAY_URL":"%s","AP_IMBRACE_ADDING_CONNECTION_PIECES":"%s"}' \
-        "$AP_APP_TITLE" "$AP_FAVICON_URL" "$GATEWAY_URL" "$AP_FRONTEND_URL" "$AP_ENVIRONMENT" "$AP_CHAT_WIDGET" "$AP_GATEWAY_URL" "$AP_IMBRACE_ADDING_CONNECTION_PIECES" \
-        > /usr/share/nginx/html/env.json
-fi
+echo "Generating /config (allowlisted keys only)..."
+{
+    printf '{'
+    sep=''
+    for key in AP_APP_TITLE AP_FAVICON_URL GATEWAY_URL AP_FRONTEND_URL AP_ENVIRONMENT \
+               AP_CHAT_WIDGET AP_GATEWAY_URL AP_IMBRACE_ADDING_CONNECTION_PIECES; do
+        eval "value=\${$key}"
+        printf '%s"%s":"%s"' "$sep" "$key" "$(json_escape "$value")"
+        sep=','
+    done
+    printf '}\n'
+} > /usr/share/nginx/html/env.json
 
 # Validate nginx configuration
 echo "Validating nginx configuration..."
