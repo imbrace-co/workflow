@@ -4,9 +4,10 @@ import { StatusOption, TodoEnvironment } from '.'
 
 const StatusOptionsSchema = Type.Array(StatusOption, { minItems: 1 })
 
+// platformId/projectId are accepted for older clients but ignored: the caller's principal decides.
 export const ListTodosQueryParams = Type.Object({
-    platformId: ApId,
-    projectId: ApId,
+    platformId: Type.Optional(Type.String()),
+    projectId: Type.Optional(Type.String()),
     flowId: Type.Optional(ApId),
     cursor: Type.Optional(Type.String()),
     limit: Type.Optional(Type.Integer({ minimum: 1, maximum: 100 })),
