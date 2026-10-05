@@ -3,6 +3,11 @@ import { callableFlowKey, CallableFlowResponse, MOCK_CALLBACK_IN_TEST_FLOW_URL }
 import { httpClient, HttpMethod } from '@activepieces/pieces-common';
 import { isNil } from '@activepieces/shared';
 
+// The callback is a public resume URL; inside the cluster the public host may not be reachable.
+function toInternalUrl(url: string, server: { apiUrl: string; publicUrl: string }): string {
+  return url.startsWith(server.publicUrl) ? server.apiUrl + url.slice(server.publicUrl.length) : url;
+}
+
 export const response = createAction({
   name: 'returnResponse',
   displayName: 'Return Response',
@@ -60,7 +65,7 @@ export const response = createAction({
     if (isNotTestFlow && !isNil(callbackUrl)) {
       await httpClient.sendRequest<CallableFlowResponse>({
         method: HttpMethod.POST,
-        url: callbackUrl,
+        url: toInternalUrl(callbackUrl, context.server),
         body: {
           status: 'success',
           data: response

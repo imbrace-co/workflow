@@ -114,7 +114,7 @@ export const callFlow = createAction({
 
     const response = await httpClient.sendRequest<CallableFlowRequest>({
       method: HttpMethod.POST,
-      url: `${context.serverUrl}v1/webhooks/${flow?.id}`,
+      url: `${context.server.apiUrl}v1/webhooks/${flow?.id}`,
       headers: {
         'Content-Type': 'application/json',
         [PARENT_RUN_ID_HEADER]: context.run.id,

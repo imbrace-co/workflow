@@ -18,7 +18,7 @@ export const createTodoProps = {
     displayName: 'Assignee',
     required: false,
     options: async (_, context) => {
-      const baseApiUrl = context.server.publicUrl;
+      const baseApiUrl = context.server.apiUrl;
       const apiKey = context.server.token;
       const users = await listAssignee(baseApiUrl, apiKey);
       return {
@@ -90,6 +90,7 @@ type ApprovalParms = {
     id: string;
   };
   server: {
+    apiUrl: string;
     publicUrl: string;
     token: string;
   };
@@ -114,7 +115,7 @@ export async function sendTodoApproval(context: ApprovalParms, isTest: boolean) 
   };
   return await httpClient.sendRequest<PopulatedTodo>({
     method: HttpMethod.POST,
-    url: `${context.server.publicUrl}v1/todos`,
+    url: `${context.server.apiUrl}v1/todos`,
     body: requestBody,
     authentication: {
       type: AuthenticationType.BEARER_TOKEN,

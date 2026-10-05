@@ -152,8 +152,16 @@ type DeleteParams = {
     projectId: ProjectId
 }   
 
+// resolveUrl is a public resume URL (through the /api proxy). This process serves that
+// route itself on :3000, and the public host may not be reachable from inside the container.
+const RESUME_PATH = /^(?:\/api)?(\/v1\/flow-runs\/[^/]+\/requests\/[^/]+(?:\/sync)?)$/
+
 async function sendResolveRequest(resolveUrl: string, status: StatusOption) {
-    const url = new URL(resolveUrl)
+    let url = new URL(resolveUrl)
+    const resumePath = url.pathname.match(RESUME_PATH)?.[1]
+    if (resumePath) {
+        url = new URL(`http://127.0.0.1:3000${resumePath}${url.search}`)
+    }
     url.searchParams.append('status', status.name)
     await fetch(url.toString(), {
         method: 'POST',

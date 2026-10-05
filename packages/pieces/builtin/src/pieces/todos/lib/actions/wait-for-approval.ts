@@ -28,7 +28,7 @@ export const waitForApproval = createAction({
   async test(ctx) {
     const request: HttpRequest = {
       method: HttpMethod.GET,
-      url: `${ctx.server.publicUrl}v1/todos/${ctx.propsValue.taskId}`,
+      url: `${ctx.server.apiUrl}v1/todos/${ctx.propsValue.taskId}`,
       authentication: {
         type: AuthenticationType.BEARER_TOKEN,
         token: ctx.server.token,
