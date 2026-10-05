@@ -7,7 +7,7 @@ import {
   DropdownOption,
   InputPropertyMap,
 } from '@activepieces/pieces-framework';
-import { imbraceApiRequest } from '../common/api';
+import { credentialHeaders, imbraceApiRequest } from '../common/api';
 import { httpClient, HttpMethod } from '@activepieces/pieces-common';
 import { getAccountAssistantsV2, getAssistantById } from '../common/ai-api';
 import { randomUUID } from 'crypto';
@@ -17,6 +17,34 @@ dotenv.config({ path: './.env' });
 // import { setWorkflowOutputHistory } from '../utils/ai-assitant';
 
 let cachedOrganizationId: string | undefined;
+
+// Order: the step's API key connection, the token of the iMBrace service that started
+// the flow, then the legacy org token endpoint (absent from the open-source platform).
+async function resolveCredential(
+  apiKey: unknown,
+  imbraceToken: string | undefined,
+  organizationId: string,
+): Promise<string> {
+  if (typeof apiKey === 'string' && apiKey.trim()) return apiKey.trim();
+  if (imbraceToken) return imbraceToken;
+  const platformUri = process.env['PLATFORM_SERVICE_API'] || 'http://platform.dev.imbrace.lan';
+  try {
+    const res = await fetch(`${platformUri}/v1/access`, {
+      method: 'GET',
+      headers: { 'x-organization-id': organizationId },
+    });
+    if (res.ok) {
+      const token = ((await res.json()) as any)?.token;
+      if (token) return token;
+    }
+  } catch (e) {
+    console.error('Failed to fetch access token:', e);
+  }
+  throw new Error(
+    'No iMBrace credential for this step. Add an iMBrace API key connection to it, ' +
+      'or start the flow from an iMBrace service.',
+  );
+}
 
 function extractChatResult(raw: string): string {
   const match = raw.match(/<chat_result>([\s\S]*?)<\/chat_result>/);
@@ -34,8 +62,8 @@ export const assistantRequest = createAction({
       displayName: 'Assistant Name',
       required: true,
       refreshers: [],
-      options: async (_, ctx) => {
-        const imbraceToken = ctx.server.imbraceToken;
+      options: async ({ auth }, ctx) => {
+        const imbraceToken = (typeof auth === 'string' && auth) || ctx.server.imbraceToken;
 
         // Cache organization_id so it's always available in run()
         try {
@@ -111,13 +139,13 @@ export const assistantRequest = createAction({
       required: false,
       refreshers: [],
       defaultValue: 'Default',
-      options: async (_, ctx) => {
+      options: async ({ auth }, ctx) => {
         const models = await imbraceApiRequest(
           HttpMethod.GET,
           '/ai/v3/workflow-agent/models',
           {},
           false,
-          ctx.server.imbraceToken
+          (typeof auth === 'string' && auth) || ctx.server.imbraceToken
         );
         if (!models?.data) return { disabled: true, options: [] };
 
@@ -254,24 +282,14 @@ export const assistantRequest = createAction({
         } = sourceDetails);
       }
 
-      // Legacy backend retired: AI calls go via the app-gateway (/ai/v3/*) and
-      // the org access token comes from platform-service. Mint it up front — the
-      // gateway requires it (incl. the assistant lookup below).
+      // AI calls go via the app-gateway (/ai/v3/*), which needs a credential,
+      // including for the assistant lookup below.
       const baseUri = process.env['IMBRACE_API_DOMAIN'] || 'https://app-gateway.dev.imbrace.co';
-      const platformUri = process.env['PLATFORM_SERVICE_API'] || 'http://platform.dev.imbrace.lan'
 
       if (!organization_id) throw new Error('organization_id is required but cannot be found in trigger context or props');
 
-      let accessToken = '';
-      try {
-        const accessResponse = await fetch(`${platformUri}/v1/access`, {
-          method: 'GET',
-          headers: { 'x-organization-id': organization_id },
-        });
-        accessToken = ((await accessResponse.json()) as any)?.token || '';
-      } catch (e) {
-        console.error('Failed to fetch access token:', e);
-      }
+      const accessToken = await resolveCredential(ctx.auth, ctx.server.imbraceToken, organization_id);
+      const authHeaders = credentialHeaders(accessToken);
 
       const assistants = await getAccountAssistantsV2(organization_id as string, accessToken);
       // console.debug('Fetched assistants for organization', { organization_id, count: assistants?.length ?? 0 });
@@ -304,7 +322,6 @@ export const assistantRequest = createAction({
       } else {
         if (version === 'v2') {
           console.debug('Using v2 API for assistant request', { assistant_id, organization_id, text,ctx });
-          // accessToken already minted above via platform-service /v1/access.
           let userId='';
 
           const v2BaseUrl = process.env['MESSAGE_SUGGESTION_API'] || 'https://nextbestaction.sandbox.imbrace.co';
@@ -321,7 +338,7 @@ export const assistantRequest = createAction({
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
-                'X-Access-Token': accessToken,
+                ...authHeaders,
               },
               body: JSON.stringify({}),
             });
@@ -335,7 +352,7 @@ export const assistantRequest = createAction({
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
-              'x-access-token': accessToken,
+              ...authHeaders,
               'x-organization-id': organization_id || '',
             },
             body: JSON.stringify({
@@ -350,6 +367,9 @@ export const assistantRequest = createAction({
           });
 
           const responseText = await v2Response.text();
+          if (!v2Response.ok) {
+            throw new Error(`AI agent request failed (HTTP ${v2Response.status}): ${responseText.slice(0, 500)}`);
+          }
           // Parse AI SDK v5 UI Message Stream (SSE): each event line starts with
           // "data: " and contains JSON with a `type` field. Concatenate every
           // `text-delta.delta` to reconstruct the AI's full text response.
@@ -384,7 +404,7 @@ export const assistantRequest = createAction({
                   },
                   headers: {
                     'Content-Type': 'application/json',
-                    'X-Access-Token': accessToken,
+                    ...authHeaders,
                     'x-organization-id': organization_id,
                   },
                 });
@@ -420,7 +440,7 @@ export const assistantRequest = createAction({
           body: bodyAi,
           headers: {
             'Content-Type': 'application/json',
-            'X-Access-Token': accessToken,
+            ...authHeaders,
             'x-organization-id': organization_id,
           },
         });
@@ -444,7 +464,7 @@ export const assistantRequest = createAction({
                 },
                 headers: {
                   'Content-Type': 'application/json',
-                  'X-Access-Token': accessToken,
+                  ...authHeaders,
                   'x-organization-id': organization_id,
                 },
               });

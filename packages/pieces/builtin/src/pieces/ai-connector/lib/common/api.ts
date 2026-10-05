@@ -24,6 +24,16 @@ function buildOptions(
   return options;
 }
 
+// iMBrace API keys (api_*) authenticate with x-api-key; access tokens with x-access-token.
+export function credentialHeaders(credential?: string): Record<string, string> {
+  if (credential?.startsWith('api_')) {
+    return { 'x-api-key': credential };
+  }
+  return credential
+    ? { 'X-Access-Token': credential, Authorization: `Bearer ${credential}` }
+    : { 'X-Access-Token': '' };
+}
+
 export async function imbraceApiRequest(
   method: HttpMethod,
   endpoint: string,
@@ -39,17 +49,13 @@ export async function imbraceApiRequest(
     //   env === 'production'
     //     ? accessToken // ideally injected via PieceAuth
     //     : temp_token;
-    console.log('Using access token:', accessToken);
     let baseUri = process.env['IMBRACE_API_DOMAIN'] || 'https://app-gateway.dev.imbrace.co';
     if (oldApi) {
       baseUri = process.env['IMBRACE_API_OLD_DOMAIN'] || 'https://dev-app-api.imbrace.co';
     }
 
     const options = buildOptions(method, baseUri, endpoint, body);
-    options.headers!['X-Access-Token'] = accessToken || '';
-    if (accessToken) {
-      options.headers!['Authorization'] = `Bearer ${accessToken}`;
-    }
+    Object.assign(options.headers!, credentialHeaders(accessToken));
     if (extraHeaders) {
       Object.assign(options.headers!, extraHeaders);
     }
